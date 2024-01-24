@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://counocjqt2817"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="TextEdit" type="TextEdit" parent="."]
+offset_right = 845.0
+offset_bottom = 115.0
+text = "AAAAAAAAAAAAAAAAARRRRRRRRRGGGGGGGGGGGGGHHHHHHHHHHHHHHHH
+
+ME BOOTY"
