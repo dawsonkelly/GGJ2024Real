@@ -21,13 +21,16 @@ var invOpen
 var invClosed
 
 func _ready():
-	invOpen = get_node("Inventory/Open")
-	invClosed = get_node("Inventory/Closed")
+	invOpen = get_node("GUI/Inventory/Open")
+	invClosed = get_node("GUI/Inventory/Closed")
 	
 	
 	#for filePath in DirAccess.get_files_at("res://Towers/"):
 	#	if filePath.get_extension() == "tscn":  
 	#		towers.append( load(filePath) )
+
+func _process(delta):
+	$GUI/Money.text = "P-Bucks: " + str (money)
 
 func _on_inventory_button_pressed():
 	if !building:
@@ -49,6 +52,7 @@ func _on_tower1_button_pressed():
 			inventoryOn = false
 			instanceTower = tower1.instantiate()
 			cost = 10
+			building = true
 			add_child(instanceTower)
 
 func tower_built():

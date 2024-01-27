@@ -29,47 +29,54 @@ enemyScene = ExtResource("3_2k6mc")
 [node name="EnemySpawnTimer" type="Timer" parent="Path2D"]
 wait_time = 3.0
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="GUI" type="CanvasLayer" parent="."]
 
-[node name="Inventory" type="Node2D" parent="."]
+[node name="Inventory" type="Node2D" parent="GUI"]
 
-[node name="Open" type="Sprite2D" parent="Inventory"]
+[node name="Open" type="Sprite2D" parent="GUI/Inventory"]
+visible = false
 position = Vector2(2103.63, 639.529)
 scale = Vector2(1.2, 1.2)
 texture = ExtResource("5_lh501")
 
-[node name="TextureRect" type="TextureRect" parent="Inventory/Open"]
+[node name="TextureRect" type="TextureRect" parent="GUI/Inventory/Open"]
 offset_left = -137.188
 offset_top = -460.441
 offset_right = -9.18752
 offset_bottom = -332.441
 texture = ExtResource("6_f4f05")
 
-[node name="TextureRect2" type="TextureRect" parent="Inventory/Open"]
+[node name="TextureRect2" type="TextureRect" parent="GUI/Inventory/Open"]
 offset_left = 6.97914
 offset_top = -460.441
 offset_right = 134.979
 offset_bottom = -332.441
 texture = ExtResource("6_f4f05")
 
-[node name="TextureButton" type="TextureButton" parent="Inventory/Open"]
+[node name="TextureButton" type="TextureButton" parent="GUI/Inventory/Open"]
 offset_left = -136.358
 offset_top = -461.274
 offset_right = -8.35823
 offset_bottom = -333.274
 texture_normal = ExtResource("6_f4f05")
 
-[node name="Closed" type="Sprite2D" parent="Inventory"]
+[node name="Closed" type="Sprite2D" parent="GUI/Inventory"]
 position = Vector2(2104, 639)
 scale = Vector2(1.2, 1.2)
 texture = ExtResource("7_6byqp")
 
-[node name="TextureButton" type="TextureButton" parent="Inventory"]
+[node name="TextureButton" type="TextureButton" parent="GUI/Inventory"]
 offset_left = 2256.0
 offset_top = 46.0
 offset_right = 2282.0
 offset_bottom = 72.0
 
+[node name="Money" type="Label" parent="GUI"]
+offset_right = 40.0
+offset_bottom = 23.0
+theme_override_font_sizes/font_size = 45
+text = "P-Bucks: 1000"
+
 [connection signal="timeout" from="Path2D/EnemySpawnTimer" to="Path2D" method="_on_enemy_spawn_timer_timeout"]
-[connection signal="pressed" from="Inventory/Open/TextureButton" to="." method="_on_tower1_button_pressed"]
-[connection signal="pressed" from="Inventory/TextureButton" to="." method="_on_inventory_button_pressed"]
+[connection signal="pressed" from="GUI/Inventory/Open/TextureButton" to="." method="_on_tower1_button_pressed"]
+[connection signal="pressed" from="GUI/Inventory/TextureButton" to="." method="_on_inventory_button_pressed"]
