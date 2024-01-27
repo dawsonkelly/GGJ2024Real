@@ -1,6 +1,6 @@
 extends StaticBody2D
 
-var bulletPath = preload ("res://bullet.tscn")
+@export var bulletScene : PackedScene
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -16,7 +16,7 @@ func _on_tower_shoot_timer_timeout():#bang!
 	shoot()
 
 func shoot():
-	var bullet = bulletPath.instantiate()#spawn bullet that eventually deletes itself
+	var bullet = bulletScene.instantiate()#spawn bullet that eventually deletes itself
 	
 	#add code here that rotates bullet
 	add_child(bullet)
