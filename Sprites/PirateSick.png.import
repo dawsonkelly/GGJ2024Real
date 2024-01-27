@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b2la2kevputc1"
-path="res://.godot/imported/Package Hub icon.png-043ba9ffe2d48ca69283c6a2f33b2982.ctex"
+uid="uid://to7uspsprks6"
+path="res://.godot/imported/PirateSick.png-15d743fc07231f510a2eaea89a7e3e8a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Package Hub icon.png"
-dest_files=["res://.godot/imported/Package Hub icon.png-043ba9ffe2d48ca69283c6a2f33b2982.ctex"]
+source_file="res://Sprites/PirateSick.png"
+dest_files=["res://.godot/imported/PirateSick.png-15d743fc07231f510a2eaea89a7e3e8a.ctex"]
 
 [params]
 

@@ -31,7 +31,11 @@ func _on_tower_shoot_timer_timeout():#bang!
 	if building == false:
 		if enemies != []:
 			current_enemy = enemies[0]#selects first enemy to enter radius
-			shoot()
+			if current_enemy.get_parent().dead:
+				enemies.erase(current_enemy)
+				_on_tower_shoot_timer_timeout()
+			else:
+				shoot()
 
 func shoot():
 	var bullet = bulletScene.instantiate()

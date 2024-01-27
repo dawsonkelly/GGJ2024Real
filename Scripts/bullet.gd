@@ -29,7 +29,10 @@ func _on_visible_on_screen_notifier_2d_screen_exited():
 func _on_area_entered(area):#an area has entered the bullet
 	print("bullet entered something")
 	if area.is_in_group("Enemy"):
-		area.get_parent().hit()
-		queue_free() #or whatever you do to destroy the bullet
+		if area.get_parent().dead:
+			pass
+		else:
+			area.get_parent().hit()
+			queue_free() #or whatever you do to destroy the bullet
 
 
