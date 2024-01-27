@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://cocvks5qqd80p"]
+[gd_scene load_steps=12 format=3 uid="uid://cocvks5qqd80p"]
 
 [ext_resource type="Script" path="res://Scripts/MainGame.gd" id="1_lwarc"]
 [ext_resource type="PackedScene" uid="uid://bk8o00im2jvi5" path="res://Scenes/Tilemaps/tile_map_one.tscn" id="1_rjw5u"]
@@ -7,9 +7,9 @@
 [ext_resource type="Texture2D" uid="uid://27d274dymlj5" path="res://Sprites/inventory.png" id="5_lh501"]
 [ext_resource type="Texture2D" uid="uid://b7k45e2i6aqet" path="res://Sprites/icon.svg" id="6_f4f05"]
 [ext_resource type="Texture2D" uid="uid://c30yhs3n7lpbi" path="res://Sprites/inventoryClosed.png" id="7_6byqp"]
-[ext_resource type="PackedScene" uid="uid://b8306pbpi82nf" path="res://Scenes/porch.tscn" id="8_mi0vb"]
-[ext_resource type="Texture2D" uid="uid://b2la2kevputc1" path="res://Sprites/Package Hub icon.png" id="8_n8h0x"]
-[ext_resource type="Texture2D" uid="uid://22ysptgmtyce" path="res://Sprites/Package Bay.png" id="9_amosc"]
+[ext_resource type="PackedScene" path="res://Scenes/porch.tscn" id="8_mi0vb"]
+[ext_resource type="Texture2D" path="res://Sprites/Package Hub icon.png" id="8_n8h0x"]
+[ext_resource type="Texture2D" path="res://Sprites/Package Bay.png" id="9_amosc"]
 
 [sub_resource type="Curve2D" id="Curve2D_l5sy7"]
 _data = {
@@ -81,7 +81,6 @@ offset_bottom = 63.0
 theme_override_font_sizes/font_size = 45
 text = "P-Bucks: 1000"
 
-[node name="Porch" parent="." instance=ExtResource("8_mi0vb")]
 [node name="Shop" type="Node2D" parent="GUI"]
 
 [node name="TextureButton" type="TextureButton" parent="GUI/Shop"]
@@ -97,6 +96,8 @@ visible = false
 position = Vector2(1315, 637)
 scale = Vector2(1.2, 1.2)
 texture = ExtResource("9_amosc")
+
+[node name="Porch" parent="." instance=ExtResource("8_mi0vb")]
 
 [connection signal="timeout" from="Path2D/EnemySpawnTimer" to="Path2D" method="_on_enemy_spawn_timer_timeout"]
 [connection signal="pressed" from="GUI/Inventory/Open/TextureButton" to="." method="_on_tower1_button_pressed"]
