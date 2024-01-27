@@ -1,0 +1,33 @@
+[gd_scene load_steps=7 format=3 uid="uid://dsoecycwpdxvm"]
+
+[ext_resource type="Script" path="res://Scripts/MainGame.gd" id="1_2bbik"]
+[ext_resource type="PackedScene" uid="uid://bk8o00im2jvi5" path="res://Scenes/Tilemaps/tile_map_one.tscn" id="2_h74s6"]
+[ext_resource type="Script" path="res://Scenes/Tilemaps/enemy_spawn_path.gd" id="3_3vflm"]
+[ext_resource type="PackedScene" uid="uid://c6apdp7ujregg" path="res://Scenes/pirate.tscn" id="4_htopf"]
+[ext_resource type="PackedScene" uid="uid://g55e88eesyxv" path="res://Scenes/tower.tscn" id="5_20n74"]
+
+[sub_resource type="Curve2D" id="Curve2D_l5sy7"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 1180, 1068, 0, 0, 0, 0, 1180, 859, 0, 0, 0, 0, 156, 854, 0, 0, 0, 0, 158, 149, 0, 0, 0, 0, 727, 152, 0, 0, 0, 0, 727, 411, 0, 0, 0, 0, 407, 408, 0, 0, 0, 0, 415, 598, 0, 0, 0, 0, 1429, 614, 0, 0, 0, 0, 1437, 865, 0, 0, 0, 0, 2145, 857, 0, 0, 0, 0, 2142, 358, 0, 0, 0, 0, 1182, 352, 0, 0, 0, 0, 1176, 147)
+}
+point_count = 14
+
+[node name="Game" type="Node2D"]
+script = ExtResource("1_2bbik")
+
+[node name="TileMap" parent="." instance=ExtResource("2_h74s6")]
+
+[node name="PathSpawner" type="Node2D" parent="."]
+
+[node name="Path2D" type="Path2D" parent="."]
+curve = SubResource("Curve2D_l5sy7")
+script = ExtResource("3_3vflm")
+enemyScene = ExtResource("4_htopf")
+
+[node name="EnemySpawnTimer" type="Timer" parent="Path2D"]
+wait_time = 3.0
+
+[node name="Tower" parent="." instance=ExtResource("5_20n74")]
+position = Vector2(958, 739)
+
+[connection signal="timeout" from="Path2D/EnemySpawnTimer" to="Path2D" method="_on_enemy_spawn_timer_timeout"]
