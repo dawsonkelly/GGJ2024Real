@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://cocvks5qqd80p"]
+
+[ext_resource type="PackedScene" uid="uid://bk8o00im2jvi5" path="res://Scenes/Tilemaps/tile_map_one.tscn" id="1_rjw5u"]
+[ext_resource type="PackedScene" uid="uid://c32kufbacxneh" path="res://enemy.tscn" id="2_75itu"]
+
+[sub_resource type="Curve2D" id="Curve2D_l5sy7"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 1178, 934, 0, 0, 0, 0, 1180, 859, 0, 0, 0, 0, 156, 854, 0, 0, 0, 0, 158, 149, 0, 0, 0, 0, 727, 152, 0, 0, 0, 0, 727, 411, 0, 0, 0, 0, 407, 408, 0, 0, 0, 0, 415, 598, 0, 0, 0, 0, 1429, 614, 0, 0, 0, 0, 1437, 865, 0, 0, 0, 0, 2145, 857, 0, 0, 0, 0, 2142, 358, 0, 0, 0, 0, 1182, 352, 0, 0, 0, 0, 1176, 147)
+}
+point_count = 14
+
+[node name="Game" type="Node2D"]
+
+[node name="TileMap" parent="." instance=ExtResource("1_rjw5u")]
+
+[node name="PathSpawner" type="Node2D" parent="."]
+
+[node name="Path2D" type="Path2D" parent="."]
+curve = SubResource("Curve2D_l5sy7")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
+position = Vector2(1178, 934)
+rotation = -1.54414
+
+[node name="Enemy" parent="Path2D/PathFollow2D" instance=ExtResource("2_75itu")]
+position = Vector2(-15.0479, -1.59946)

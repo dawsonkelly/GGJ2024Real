@@ -1,11 +1,13 @@
-[gd_scene load_steps=3 format=3 uid="uid://c32kufbacxneh"]
+[gd_scene load_steps=4 format=3 uid="uid://c32kufbacxneh"]
 
+[ext_resource type="Script" path="res://enemy.gd" id="1_ikso0"]
 [ext_resource type="Texture2D" uid="uid://b7k45e2i6aqet" path="res://icon.svg" id="1_to61e"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_eup5j"]
 size = Vector2(128, 129)
 
 [node name="Enemy" type="CharacterBody2D"]
+script = ExtResource("1_ikso0")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 self_modulate = Color(1, 0, 1, 1)
