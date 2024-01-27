@@ -7,8 +7,8 @@
 [ext_resource type="Texture2D" uid="uid://27d274dymlj5" path="res://Sprites/inventory.png" id="5_lh501"]
 [ext_resource type="Texture2D" uid="uid://b7k45e2i6aqet" path="res://Sprites/icon.svg" id="6_f4f05"]
 [ext_resource type="Texture2D" uid="uid://c30yhs3n7lpbi" path="res://Sprites/inventoryClosed.png" id="7_6byqp"]
+[ext_resource type="Texture2D" uid="uid://dcjcxfhc8ore5" path="res://Sprites/Package Bay icon.png" id="8_62emb"]
 [ext_resource type="PackedScene" uid="uid://bn6d6k44itruv" path="res://Scenes/porch.tscn" id="8_mi0vb"]
-[ext_resource type="Texture2D" uid="uid://b2la2kevputc1" path="res://Sprites/Package Hub icon.png" id="8_n8h0x"]
 [ext_resource type="Texture2D" uid="uid://22ysptgmtyce" path="res://Sprites/Package Bay.png" id="9_amosc"]
 [ext_resource type="Texture2D" uid="uid://dscvlls38cw1" path="res://Sprites/Pirate ship.png" id="11_6s6d1"]
 
@@ -82,6 +82,14 @@ offset_bottom = 63.0
 theme_override_font_sizes/font_size = 45
 text = "P-Bucks: 1000"
 
+[node name="Money2" type="Label" parent="GUI"]
+offset_left = 2.0
+offset_top = 54.0
+offset_right = 301.0
+offset_bottom = 117.0
+theme_override_font_sizes/font_size = 45
+text = "Packages: 5"
+
 [node name="Shop" type="Node2D" parent="GUI"]
 
 [node name="TextureButton" type="TextureButton" parent="GUI/Shop"]
@@ -89,7 +97,7 @@ offset_left = 1732.0
 offset_top = 50.0
 offset_right = 1886.0
 offset_bottom = 182.0
-texture_normal = ExtResource("8_n8h0x")
+texture_normal = ExtResource("8_62emb")
 stretch_mode = 0
 
 [node name="Shop1" type="Sprite2D" parent="GUI/Shop"]
@@ -101,6 +109,26 @@ texture = ExtResource("9_amosc")
 [node name="Porch" parent="." instance=ExtResource("8_mi0vb")]
 position = Vector2(1179, 66)
 scale = Vector2(0.275, 0.275)
+
+[node name="Package" type="Sprite2D" parent="Porch"]
+position = Vector2(-109.091, 123.636)
+texture = ExtResource("6_f4f05")
+
+[node name="Package2" type="Sprite2D" parent="Porch"]
+position = Vector2(72.7273, 167.273)
+texture = ExtResource("6_f4f05")
+
+[node name="Package3" type="Sprite2D" parent="Porch"]
+position = Vector2(54.5455, 14.5455)
+texture = ExtResource("6_f4f05")
+
+[node name="Package4" type="Sprite2D" parent="Porch"]
+position = Vector2(-214.545, -47.2727)
+texture = ExtResource("6_f4f05")
+
+[node name="Package5" type="Sprite2D" parent="Porch"]
+position = Vector2(272.727, 43.6364)
+texture = ExtResource("6_f4f05")
 
 [node name="Ship" type="Sprite2D" parent="."]
 z_index = 10
