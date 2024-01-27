@@ -1,9 +1,9 @@
 [gd_scene load_steps=2 format=3 uid="uid://c58hla88xl0ba"]
 
-[ext_resource type="Script" path="res://Scenes/Tilemaps/enemy_spawn_path.gd" id="1_eqkvf"]
+[ext_resource type="Script" path="res://Scenes/Tilemaps/enemy_spawn_path.gd" id="1_oy30r"]
 
 [node name="EnemySpawnPoint" type="Node2D"]
-script = ExtResource("1_eqkvf")
+script = ExtResource("1_oy30r")
 
 [node name="EnemySpawnTimer" type="Timer" parent="."]
 wait_time = 3.0

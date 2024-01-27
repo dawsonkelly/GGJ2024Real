@@ -1,9 +1,9 @@
 [gd_scene load_steps=6 format=3 uid="uid://cocvks5qqd80p"]
 
-[ext_resource type="Script" path="res://Scenes/MainGame.gd" id="1_lwarc"]
+[ext_resource type="Script" path="res://Scripts/MainGame.gd" id="1_lwarc"]
 [ext_resource type="PackedScene" uid="uid://bk8o00im2jvi5" path="res://Scenes/Tilemaps/tile_map_one.tscn" id="1_rjw5u"]
 [ext_resource type="Script" path="res://Scenes/Tilemaps/enemy_spawn_path.gd" id="2_4fg0s"]
-[ext_resource type="PackedScene" uid="uid://xlwk80dpbro8" path="res://pirate.tscn" id="3_2k6mc"]
+[ext_resource type="PackedScene" uid="uid://xlwk80dpbro8" path="res://Scenes/pirate.tscn" id="3_2k6mc"]
 
 [sub_resource type="Curve2D" id="Curve2D_l5sy7"]
 _data = {
