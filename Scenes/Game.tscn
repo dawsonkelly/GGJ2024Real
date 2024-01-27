@@ -98,6 +98,8 @@ scale = Vector2(1.2, 1.2)
 texture = ExtResource("9_amosc")
 
 [node name="Porch" parent="." instance=ExtResource("8_mi0vb")]
+position = Vector2(1179, 66)
+scale = Vector2(0.275, 0.275)
 
 [connection signal="timeout" from="Path2D/EnemySpawnTimer" to="Path2D" method="_on_enemy_spawn_timer_timeout"]
 [connection signal="pressed" from="GUI/Inventory/Open/TextureButton" to="." method="_on_tower1_button_pressed"]
