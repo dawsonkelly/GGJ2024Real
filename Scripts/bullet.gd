@@ -13,7 +13,7 @@ func _ready():
 func _physics_process(delta):
 	var collision = move_and_collide((velocity.normalized()) * bulletSpeed * delta)
 	if collision:
-		#print("I collided with ", collision.get_collider().name)
+		print("I collided with ", collision.get_collider().name)
 		if collision.get_collider().is_in_group("Enemy"):#if enemy hit and die
 			collision.getcollider().hit()
 			queue_free()

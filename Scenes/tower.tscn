@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://g55e88eesyxv"]
+[gd_scene load_steps=6 format=3 uid="uid://g55e88eesyxv"]
 
 [ext_resource type="Script" path="res://Scripts/tower.gd" id="1_qqatm"]
+[ext_resource type="PackedScene" uid="uid://b17np5pffnu44" path="res://Scenes/bullet.tscn" id="2_ty0qu"]
 [ext_resource type="Texture2D" uid="uid://b7k45e2i6aqet" path="res://Sprites/icon.svg" id="2_wlh2m"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rit2p"]
@@ -10,7 +11,9 @@ size = Vector2(128, 128)
 radius = 481.017
 
 [node name="Tower" type="StaticBody2D"]
+collision_layer = 0
 script = ExtResource("1_qqatm")
+bulletScene = ExtResource("2_ty0qu")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 self_modulate = Color(0, 0, 0.831373, 1)
