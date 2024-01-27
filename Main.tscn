@@ -12,4 +12,4 @@ offset_bottom = 40.0
 texture = ExtResource("1_mug6l")
 
 [node name="EnemySpawnPoint" parent="." instance=ExtResource("2_cl503")]
-position = Vector2(583, 64)
+position = Vector2(304, 279)
