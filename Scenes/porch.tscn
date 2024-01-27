@@ -1,8 +1,14 @@
-[gd_scene load_steps=2 format=3 uid="uid://bn6d6k44itruv"]
+[gd_scene load_steps=3 format=3 uid="uid://bn6d6k44itruv"]
 
 [ext_resource type="Script" path="res://Scripts/porch.gd" id="1_l25yc"]
+[ext_resource type="Texture2D" path="res://Sprites/deck.png" id="2_8556b"]
 
-[node name="Porch" type="StaticBody2D"]
+[node name="Porch" type="Area2D"]
 script = ExtResource("1_l25yc")
 
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_8556b")
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
