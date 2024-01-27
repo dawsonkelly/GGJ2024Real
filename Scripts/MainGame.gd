@@ -61,3 +61,6 @@ func tower_built():
 
 func cancel():
 	building = false
+
+func game_over():
+	pass
