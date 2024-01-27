@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://bef2pt03pipr5"]
 
 [ext_resource type="Texture2D" uid="uid://b7k45e2i6aqet" path="res://Sprites/icon.svg" id="1_bibm1"]
-[ext_resource type="PackedScene" uid="uid://y5m0ma2s5vvg" path="res://Towers/tower.tscn" id="2_jtdea"]
+[ext_resource type="PackedScene" uid="uid://y5m0ma2s5vvg" path="res://Old/tower.tscn" id="2_jtdea"]
 
 [node name="Node2D" type="Node2D"]
 

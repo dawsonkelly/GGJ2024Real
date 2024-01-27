@@ -3,10 +3,10 @@
 [ext_resource type="Script" path="res://Scripts/MainGame.gd" id="1_lwarc"]
 [ext_resource type="PackedScene" uid="uid://bk8o00im2jvi5" path="res://Scenes/Tilemaps/tile_map_one.tscn" id="1_rjw5u"]
 [ext_resource type="Script" path="res://Scenes/Tilemaps/enemy_spawn_path.gd" id="2_4fg0s"]
-[ext_resource type="PackedScene" uid="uid://dp3fmavxnq113" path="res://Scenes/pirate.tscn" id="3_2k6mc"]
-[ext_resource type="Texture2D" path="res://Sprites/inventory.png" id="5_lh501"]
+[ext_resource type="PackedScene" uid="uid://c6apdp7ujregg" path="res://Scenes/pirate.tscn" id="3_2k6mc"]
+[ext_resource type="Texture2D" uid="uid://27d274dymlj5" path="res://Sprites/inventory.png" id="5_lh501"]
 [ext_resource type="Texture2D" uid="uid://b7k45e2i6aqet" path="res://Sprites/icon.svg" id="6_f4f05"]
-[ext_resource type="Texture2D" path="res://Sprites/inventoryClosed.png" id="7_6byqp"]
+[ext_resource type="Texture2D" uid="uid://c30yhs3n7lpbi" path="res://Sprites/inventoryClosed.png" id="7_6byqp"]
 
 [sub_resource type="Curve2D" id="Curve2D_l5sy7"]
 _data = {
@@ -34,7 +34,6 @@ wait_time = 3.0
 [node name="Inventory" type="Node2D" parent="."]
 
 [node name="Open" type="Sprite2D" parent="Inventory"]
-visible = false
 position = Vector2(2103.63, 639.529)
 scale = Vector2(1.2, 1.2)
 texture = ExtResource("5_lh501")
@@ -53,6 +52,13 @@ offset_right = 134.979
 offset_bottom = -332.441
 texture = ExtResource("6_f4f05")
 
+[node name="TextureButton" type="TextureButton" parent="Inventory/Open"]
+offset_left = -136.358
+offset_top = -461.274
+offset_right = -8.35823
+offset_bottom = -333.274
+texture_normal = ExtResource("6_f4f05")
+
 [node name="Closed" type="Sprite2D" parent="Inventory"]
 position = Vector2(2104, 639)
 scale = Vector2(1.2, 1.2)
@@ -65,4 +71,5 @@ offset_right = 2282.0
 offset_bottom = 72.0
 
 [connection signal="timeout" from="Path2D/EnemySpawnTimer" to="Path2D" method="_on_enemy_spawn_timer_timeout"]
+[connection signal="pressed" from="Inventory/Open/TextureButton" to="." method="_on_tower1_button_pressed"]
 [connection signal="pressed" from="Inventory/TextureButton" to="." method="_on_inventory_button_pressed"]
