@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://cocvks5qqd80p"]
+[gd_scene load_steps=13 format=3 uid="uid://cocvks5qqd80p"]
 
 [ext_resource type="Script" path="res://Scripts/MainGame.gd" id="1_lwarc"]
 [ext_resource type="PackedScene" uid="uid://bk8o00im2jvi5" path="res://Scenes/Tilemaps/tile_map_one.tscn" id="1_rjw5u"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://bn6d6k44itruv" path="res://Scenes/porch.tscn" id="8_mi0vb"]
 [ext_resource type="Texture2D" uid="uid://b2la2kevputc1" path="res://Sprites/Package Hub icon.png" id="8_n8h0x"]
 [ext_resource type="Texture2D" uid="uid://22ysptgmtyce" path="res://Sprites/Package Bay.png" id="9_amosc"]
+[ext_resource type="Texture2D" uid="uid://dscvlls38cw1" path="res://Sprites/Pirate ship.png" id="11_6s6d1"]
 
 [sub_resource type="Curve2D" id="Curve2D_l5sy7"]
 _data = {
@@ -100,6 +101,12 @@ texture = ExtResource("9_amosc")
 [node name="Porch" parent="." instance=ExtResource("8_mi0vb")]
 position = Vector2(1179, 66)
 scale = Vector2(0.275, 0.275)
+
+[node name="Ship" type="Sprite2D" parent="."]
+z_index = 10
+position = Vector2(1175, 1090)
+scale = Vector2(1.95062, 1.95062)
+texture = ExtResource("11_6s6d1")
 
 [connection signal="timeout" from="Path2D/EnemySpawnTimer" to="Path2D" method="_on_enemy_spawn_timer_timeout"]
 [connection signal="pressed" from="GUI/Inventory/Open/TextureButton" to="." method="_on_tower1_button_pressed"]

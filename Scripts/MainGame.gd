@@ -67,3 +67,6 @@ func game_over():
 
 func _on_open_shop():
 	pass # Replace with function body.
+
+func add_money(coin):
+	money += coin

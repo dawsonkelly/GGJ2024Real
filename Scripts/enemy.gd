@@ -6,6 +6,8 @@ var enter = false
 #If the enemy is on it's way in or out
 var goinIn = true
 
+var health = 1
+
 @export var speed = 100
 
 func _process(delta):
@@ -23,5 +25,6 @@ func _process(delta):
 
 func hit():
 	print("IVE BEEN HIT IN THE BUTT OWWWWWW")
+	get_node("/root/Game/").add_money(1)
 	queue_free()
 
