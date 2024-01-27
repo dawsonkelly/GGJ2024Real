@@ -61,3 +61,9 @@ func tower_built():
 
 func cancel():
 	building = false
+
+func game_over():
+	pass
+
+func _on_open_shop():
+	pass # Replace with function body.
