@@ -1,11 +1,12 @@
-[gd_scene load_steps=4 format=3 uid="uid://cocvks5qqd80p"]
+[gd_scene load_steps=5 format=3 uid="uid://cocvks5qqd80p"]
 
 [ext_resource type="PackedScene" uid="uid://bk8o00im2jvi5" path="res://Scenes/Tilemaps/tile_map_one.tscn" id="1_rjw5u"]
-[ext_resource type="PackedScene" uid="uid://c32kufbacxneh" path="res://enemy.tscn" id="2_75itu"]
+[ext_resource type="Script" path="res://Scenes/Tilemaps/enemy_spawn_path.gd" id="2_4fg0s"]
+[ext_resource type="PackedScene" uid="uid://xlwk80dpbro8" path="res://pirate.tscn" id="3_2k6mc"]
 
 [sub_resource type="Curve2D" id="Curve2D_l5sy7"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 1178, 934, 0, 0, 0, 0, 1180, 859, 0, 0, 0, 0, 156, 854, 0, 0, 0, 0, 158, 149, 0, 0, 0, 0, 727, 152, 0, 0, 0, 0, 727, 411, 0, 0, 0, 0, 407, 408, 0, 0, 0, 0, 415, 598, 0, 0, 0, 0, 1429, 614, 0, 0, 0, 0, 1437, 865, 0, 0, 0, 0, 2145, 857, 0, 0, 0, 0, 2142, 358, 0, 0, 0, 0, 1182, 352, 0, 0, 0, 0, 1176, 147)
+"points": PackedVector2Array(0, 0, 0, 0, 1180, 1068, 0, 0, 0, 0, 1180, 859, 0, 0, 0, 0, 156, 854, 0, 0, 0, 0, 158, 149, 0, 0, 0, 0, 727, 152, 0, 0, 0, 0, 727, 411, 0, 0, 0, 0, 407, 408, 0, 0, 0, 0, 415, 598, 0, 0, 0, 0, 1429, 614, 0, 0, 0, 0, 1437, 865, 0, 0, 0, 0, 2145, 857, 0, 0, 0, 0, 2142, 358, 0, 0, 0, 0, 1182, 352, 0, 0, 0, 0, 1176, 147)
 }
 point_count = 14
 
@@ -17,10 +18,10 @@ point_count = 14
 
 [node name="Path2D" type="Path2D" parent="."]
 curve = SubResource("Curve2D_l5sy7")
+script = ExtResource("2_4fg0s")
+enemyPath = ExtResource("3_2k6mc")
 
-[node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
-position = Vector2(1178, 934)
-rotation = -1.54414
+[node name="EnemySpawnTimer" type="Timer" parent="Path2D"]
+wait_time = 3.0
 
-[node name="Enemy" parent="Path2D/PathFollow2D" instance=ExtResource("2_75itu")]
-position = Vector2(-15.0479, -1.59946)
+[connection signal="timeout" from="Path2D/EnemySpawnTimer" to="Path2D" method="_on_enemy_spawn_timer_timeout"]

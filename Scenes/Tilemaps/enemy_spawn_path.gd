@@ -1,11 +1,12 @@
 extends Node2D
 
 var spawnTime = 3
-var enemyPath = preload("res://enemy.tscn")
+@export var enemyPath : PackedScene
+var timer
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	var timer = $EnemySpawnTimer as Timer
+	timer = $EnemySpawnTimer as Timer
 	timer.start()
 
 
@@ -16,4 +17,4 @@ func _process(delta):
 
 func _on_enemy_spawn_timer_timeout():#spawn enemy
 	var enemy = enemyPath.instantiate()
-	get_parent().add_child(enemy)
+	add_child(enemy)

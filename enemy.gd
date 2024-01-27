@@ -1,16 +1,22 @@
-extends CharacterBody2D
+extends PathFollow2D
+
+#spawn
+var enter = false
 
 #If the enemy is on it's way in or out
-var enter = true
+var goinIn = true
 
 @export var speed = 100
 
 func _process(delta):
 	if enter:
-		get_parent().set_progress(get_parent().get_progress() + speed*delta)
+		set_progress(0)
+		enter = true
+	if goinIn:
+		set_progress(get_progress() + speed*delta)
 	
 	else:
-		get_parent().set_progress(get_parent().get_progress() - speed*delta)
+		set_progress(get_progress() + (-speed)*delta)
 	
-	if get_parent().get_progress_ratio() == 1:
-		enter = false
+	if get_progress_ratio() == 1:
+		goinIn = false
