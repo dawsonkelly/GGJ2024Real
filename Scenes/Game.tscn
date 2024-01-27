@@ -106,6 +106,10 @@ position = Vector2(1315, 637)
 scale = Vector2(1.2, 1.2)
 texture = ExtResource("9_amosc")
 
+[node name="Popups" type="Node2D" parent="GUI"]
+
+[node name="Sprite2D" type="Sprite2D" parent="GUI/Popups"]
+
 [node name="Porch" parent="." instance=ExtResource("8_mi0vb")]
 position = Vector2(1179, 66)
 scale = Vector2(0.275, 0.275)
