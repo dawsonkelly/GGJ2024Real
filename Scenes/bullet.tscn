@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://bia56it7drf72"]
+[gd_scene load_steps=4 format=3 uid="uid://b17np5pffnu44"]
 
 [ext_resource type="Script" path="res://Scripts/bullet.gd" id="1_77eiv"]
 [ext_resource type="Texture2D" uid="uid://b7k45e2i6aqet" path="res://Sprites/icon.svg" id="2_dn30w"]
@@ -6,7 +6,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5xqgc"]
 size = Vector2(44, 30)
 
-[node name="Bullet" type="CharacterBody2D"]
+[node name="Bullet" type="CharacterBody2D" groups=["Bullet"]]
 script = ExtResource("1_77eiv")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
