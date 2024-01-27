@@ -20,3 +20,6 @@ func _process(delta):
 	
 	if get_progress_ratio() == 1:
 		goinIn = false
+
+func hit():
+	pass
