@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://dr5uke2000sbr"]
+
+[ext_resource type="Texture2D" uid="uid://b7k45e2i6aqet" path="res://icon.svg" id="1_mug6l"]
+[ext_resource type="PackedScene" uid="uid://c58hla88xl0ba" path="res://enemy_spawn_point.tscn" id="2_cl503"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Background" type="TextureRect" parent="."]
+custom_minimum_size = Vector2(1152, 648)
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_mug6l")
+
+[node name="EnemySpawnPoint" parent="." instance=ExtResource("2_cl503")]
+position = Vector2(583, 64)
