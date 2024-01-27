@@ -7,9 +7,9 @@
 [ext_resource type="Texture2D" uid="uid://27d274dymlj5" path="res://Sprites/inventory.png" id="5_lh501"]
 [ext_resource type="Texture2D" uid="uid://b7k45e2i6aqet" path="res://Sprites/icon.svg" id="6_f4f05"]
 [ext_resource type="Texture2D" uid="uid://c30yhs3n7lpbi" path="res://Sprites/inventoryClosed.png" id="7_6byqp"]
-[ext_resource type="PackedScene" path="res://Scenes/porch.tscn" id="8_mi0vb"]
-[ext_resource type="Texture2D" path="res://Sprites/Package Hub icon.png" id="8_n8h0x"]
-[ext_resource type="Texture2D" path="res://Sprites/Package Bay.png" id="9_amosc"]
+[ext_resource type="PackedScene" uid="uid://bn6d6k44itruv" path="res://Scenes/porch.tscn" id="8_mi0vb"]
+[ext_resource type="Texture2D" uid="uid://b2la2kevputc1" path="res://Sprites/Package Hub icon.png" id="8_n8h0x"]
+[ext_resource type="Texture2D" uid="uid://22ysptgmtyce" path="res://Sprites/Package Bay.png" id="9_amosc"]
 
 [sub_resource type="Curve2D" id="Curve2D_l5sy7"]
 _data = {
