@@ -1,7 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://dr5uke2000sbr"]
+[gd_scene load_steps=2 format=3 uid="uid://bef2pt03pipr5"]
 
 [ext_resource type="Texture2D" uid="uid://b7k45e2i6aqet" path="res://Sprites/icon.svg" id="1_bibm1"]
-[ext_resource type="PackedScene" uid="uid://y5m0ma2s5vvg" path="res://Towers/tower.tscn" id="2_jtdea"]
 
 [node name="Node2D" type="Node2D"]
 
@@ -10,6 +9,3 @@ custom_minimum_size = Vector2(1152, 648)
 offset_right = 40.0
 offset_bottom = 40.0
 texture = ExtResource("1_bibm1")
-
-[node name="Tower" parent="." instance=ExtResource("2_jtdea")]
-position = Vector2(577, 247)
