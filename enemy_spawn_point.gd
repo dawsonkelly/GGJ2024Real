@@ -1,6 +1,5 @@
 extends Node2D
 
-var spawnTime = 3
 var enemyPath = preload("res://enemy.tscn")
 
 # Called when the node enters the scene tree for the first time.

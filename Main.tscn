@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://dr5uke2000sbr"]
 
 [ext_resource type="Texture2D" uid="uid://b7k45e2i6aqet" path="res://icon.svg" id="1_mug6l"]
-[ext_resource type="PackedScene" uid="uid://c58hla88xl0ba" path="res://enemy_spawn_point.tscn" id="2_cl503"]
+[ext_resource type="PackedScene" uid="uid://y5m0ma2s5vvg" path="res://tower.tscn" id="3_ysncc"]
 
 [node name="Node2D" type="Node2D"]
 
@@ -11,5 +11,5 @@ offset_right = 40.0
 offset_bottom = 40.0
 texture = ExtResource("1_mug6l")
 
-[node name="EnemySpawnPoint" parent="." instance=ExtResource("2_cl503")]
-position = Vector2(304, 279)
+[node name="Tower" parent="." instance=ExtResource("3_ysncc")]
+position = Vector2(577, 247)
