@@ -22,7 +22,6 @@ func _process(delta):
 		goinIn = false
 
 func hit():
-	pass
+	print("IVE BEEN HIT IN THE BUTT OWWWWWW")
+	queue_free()
 
-func _on_area_2d_body_entered(body):
-	pass # Replace with function body.

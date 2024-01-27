@@ -40,10 +40,10 @@ func shoot():
 
 
 func _on_shoot_radius_area_entered(area):
-	print("entered!")
+	#print("entered!")
 	if area.is_in_group("Enemy"):
 		if building == false:
-			print("enemy!")
+			#print("enemy!")
 			enemies.append(area)
 
 
