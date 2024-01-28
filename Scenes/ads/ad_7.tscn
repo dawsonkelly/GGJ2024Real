@@ -1,13 +1,13 @@
 [gd_scene load_steps=3 format=3 uid="uid://bkmk1iirss8bu"]
 
 [ext_resource type="Script" path="res://Scripts/ad_script.gd" id="1_u3cft"]
-[ext_resource type="Texture2D" uid="uid://oemru0ebscap" path="res://Sprites/Popups/resort (1).png" id="2_st4ti"]
+[ext_resource type="Texture2D" uid="uid://culeve2fdjqjj" path="res://Sprites/Popups/cybertruck.png" id="2_044jn"]
 
-[node name="Ad6" type="Node2D"]
+[node name="Ad7" type="Node2D"]
 script = ExtResource("1_u3cft")
 
 [node name="AdImage" type="Sprite2D" parent="."]
-texture = ExtResource("2_st4ti")
+texture = ExtResource("2_044jn")
 
 [node name="CloseButton" type="TextureButton" parent="."]
 offset_left = 127.0
