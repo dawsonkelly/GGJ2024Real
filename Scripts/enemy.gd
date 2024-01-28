@@ -11,7 +11,7 @@ var health = 1
 
 var hasPackage = false
 
-@export var speed = 1000#test at 1000
+@export var speed = 100#test at 1000
 
 @export var regTex : Texture
 @export var runTex : Texture
@@ -34,21 +34,24 @@ func _process(delta):
 		set_progress(get_progress() - (speed*delta))
 	
 	if get_progress_ratio() == 1:
-		goinIn = false
+		take_package()
 	if get_progress_ratio() == 0 and goinIn == false:
-		queue_free()
+		return_to_ship()
 
 func hit():
 	remove_from_group("Enemy")
-	hasPackage = false;
 	goinIn = false;
 	dead = true
-	#sprite.set_texture(runTex)#crashes rn
+	if hasPackage:
+		hasPackage = false;
+		get_node("$package")
+	sprite.set_texture(runTex)#crashes rn
 	print("IVE BEEN HIT IN THE BUTT OWWWWWW")
 	get_node("/root/Game/").add_money(1)
 	#queue_free()
 
 func take_package():
+	hasPackage = true
 	var package = packageScene.instantiate()
 	add_child(package)
 

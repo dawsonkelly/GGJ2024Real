@@ -1,8 +1,9 @@
-[gd_scene load_steps=2 format=3 uid="uid://de82cavbgagq6"]
+[gd_scene load_steps=2 format=3 uid="uid://xjg5d5l4oqc3"]
 
-[ext_resource type="Texture2D" uid="uid://dcjcxfhc8ore5" path="res://Sprites/Package Bay icon.png" id="1_6ghvm"]
+[ext_resource type="Texture2D" uid="uid://cppu0vdqdgdfq" path="res://Sprites/Package Bay logo.png" id="1_2aa5m"]
 
 [node name="Package" type="Node2D"]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_6ghvm")
+scale = Vector2(0.277778, 0.277778)
+texture = ExtResource("1_2aa5m")

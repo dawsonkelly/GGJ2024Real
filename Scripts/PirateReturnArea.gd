@@ -15,5 +15,5 @@ func _process(delta):
 
 func _on_area_entered(area):#if pirate entered then return them
 	if area.is_in_group("Enemy"):
-		print("PIRATE RETURNED ARGGEGg")
-		area.get_parent().return_to_ship()
+		#print("PIRATE RETURNED ARGGEGg")
+		#area.get_parent().return_to_ship()
