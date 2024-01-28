@@ -30,10 +30,11 @@ _data = {
 }
 point_count = 14
 
-[node name="Game2" type="Node2D" node_paths=PackedStringArray("shopWindow", "shopButton")]
+[node name="Game2" type="Node2D" node_paths=PackedStringArray("shopWindow", "shopButton", "premiumButton")]
 script = ExtResource("1_lwarc")
 shopWindow = NodePath("GUI/Shop/Website")
 shopButton = NodePath("GUI/Shop/ShopOpen")
+premiumButton = NodePath("GUI/Shop/Website/Premium")
 
 [node name="TileMap" parent="." instance=ExtResource("1_rjw5u")]
 
@@ -152,7 +153,7 @@ offset_top = 44.0
 offset_right = 1907.0
 offset_bottom = 69.0
 
-[node name="Upgrade" type="TextureButton" parent="GUI/Shop/Website"]
+[node name="Premium" type="TextureButton" parent="GUI/Shop/Website"]
 offset_left = 1224.0
 offset_top = 546.0
 offset_right = 1439.0
@@ -209,5 +210,5 @@ texture = ExtResource("11_6s6d1")
 [connection signal="pressed" from="GUI/Inventory/TextureButton" to="." method="_on_inventory_button_pressed"]
 [connection signal="pressed" from="GUI/Shop/ShopOpen" to="." method="_on_open_shop"]
 [connection signal="pressed" from="GUI/Shop/Website/ShopClose" to="." method="_on_close_shop"]
-[connection signal="pressed" from="GUI/Shop/Website/Upgrade" to="." method="_on_premium"]
+[connection signal="pressed" from="GUI/Shop/Website/Premium" to="." method="_on_premium"]
 [connection signal="pressed" from="GUI/Nextwave/Next Wave button" to="Path2D" method="start_wave"]

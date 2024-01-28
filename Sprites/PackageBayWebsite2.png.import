@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://1rpkigqgx5gg"
-path="res://.godot/imported/cybertruck.png-c4b7e928af3242f3b3bd79208dd8056e.ctex"
+uid="uid://db5d45s6s480u"
+path="res://.godot/imported/PackageBayWebsite2.png-6c6bfbcd2138dc6d51c63f7f44da381c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Popups/cybertruck.png"
-dest_files=["res://.godot/imported/cybertruck.png-c4b7e928af3242f3b3bd79208dd8056e.ctex"]
+source_file="res://Sprites/PackageBayWebsite2.png"
+dest_files=["res://.godot/imported/PackageBayWebsite2.png-6c6bfbcd2138dc6d51c63f7f44da381c.ctex"]
 
 [params]
 
