@@ -1,25 +1,27 @@
-[gd_scene load_steps=4 format=3 uid="uid://b17np5pffnu44"]
+[gd_scene load_steps=4 format=3 uid="uid://coa5y47cp4wa7"]
 
-[ext_resource type="Script" path="res://Scripts/bullet.gd" id="1_77eiv"]
-[ext_resource type="Texture2D" uid="uid://b7k45e2i6aqet" path="res://Sprites/icon.svg" id="2_dn30w"]
+[ext_resource type="Script" path="res://Scripts/bullet.gd" id="1_m7kol"]
+[ext_resource type="Texture2D" uid="uid://b7k45e2i6aqet" path="res://Sprites/icon.svg" id="2_tpdb7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5xqgc"]
 size = Vector2(44, 30)
 
-[node name="Bullet" type="Area2D" groups=["Bullet"]]
-script = ExtResource("1_77eiv")
+[node name="Bolt" type="Area2D" groups=["Bullet"]]
+script = ExtResource("1_m7kol")
+bulletSpeed = 10
+damage = 1
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 self_modulate = Color(1, 0, 0, 1)
 position = Vector2(0, 1.90735e-06)
 scale = Vector2(0.34375, 0.234375)
-texture = ExtResource("2_dn30w")
+texture = ExtResource("2_tpdb7")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_5xqgc")
 
 [node name="BulletDespawnTimer" type="Timer" parent="."]
-wait_time = 10.0
+wait_time = 0.5
 one_shot = true
 autostart = true
 

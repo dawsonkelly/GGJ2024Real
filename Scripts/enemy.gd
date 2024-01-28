@@ -7,7 +7,7 @@ var enter = false
 var goinIn = true
 @export var dead = false
 
-var health = 1
+@export var health = 2
 
 var hasPackage = false
 
@@ -40,17 +40,19 @@ func _process(delta):
 	if get_progress_ratio() == 0 and goinIn == false:
 		return_to_ship()
 
-func hit():
-	remove_from_group("Enemy")
-	goinIn = false;
-	dead = true
-	if hasPackage:
-		hasPackage = false;
-		package.hide()
-	sprite.set_texture(runTex)#crashes rn
-	print("IVE BEEN HIT IN THE BUTT OWWWWWW")
-	get_node("/root/Game/").add_money(1)
-	#queue_free()
+func hit(damage):
+	health -= damage
+	if health <= 0:
+		remove_from_group("Enemy")
+		goinIn = false;
+		dead = true
+		if hasPackage:
+			hasPackage = false;
+			package.hide()
+		sprite.set_texture(runTex)#crashes rn
+		print("IVE BEEN HIT IN THE BUTT OWWWWWW")
+		get_node("/root/Game/").add_money(1)
+		#queue_free()
 
 func take_package():
 	hasPackage = true

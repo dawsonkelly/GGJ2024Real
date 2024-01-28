@@ -1,9 +1,10 @@
 extends Area2D
 
-var bulletSpeed = 5
+@export var bulletSpeed = 5
 var target
 var dir = Vector2.ZERO
 var move = Vector2.ZERO
+@export var damage = 2
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -32,7 +33,11 @@ func _on_area_entered(area):#an area has entered the bullet
 		if area.get_parent().dead:
 			pass
 		else:
-			area.get_parent().hit()
+			area.get_parent().hit(damage)
 			queue_free()
 
 
+
+
+func _on_bullet_despawn_timer_timeout():
+	queue_free()

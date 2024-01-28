@@ -1,23 +1,25 @@
-[gd_scene load_steps=6 format=3 uid="uid://g55e88eesyxv"]
+[gd_scene load_steps=6 format=3 uid="uid://3yju8v04q00t"]
 
-[ext_resource type="Script" path="res://Scripts/tower.gd" id="1_6gwu4"]
-[ext_resource type="Texture2D" uid="uid://b7k45e2i6aqet" path="res://Sprites/icon.svg" id="2_mqfir"]
-[ext_resource type="PackedScene" uid="uid://b17np5pffnu44" path="res://Scenes/bullet.tscn" id="2_o42v1"]
+[ext_resource type="Script" path="res://Scripts/tower.gd" id="1_yjbmk"]
+[ext_resource type="PackedScene" uid="uid://coa5y47cp4wa7" path="res://Scenes/bolt.tscn" id="2_2h00k"]
+[ext_resource type="Texture2D" uid="uid://b7k45e2i6aqet" path="res://Sprites/icon.svg" id="3_cegyj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rit2p"]
 size = Vector2(128, 128)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_06p8l"]
-radius = 481.017
+radius = 215.88
 
 [node name="Tower" type="StaticBody2D"]
 collision_layer = 0
-script = ExtResource("1_6gwu4")
-bulletScene = ExtResource("2_o42v1")
+script = ExtResource("1_yjbmk")
+bulletScene = ExtResource("2_2h00k")
+towerType = 1
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(0.921569, 0.913725, 0, 1)
 self_modulate = Color(0, 0, 0.831373, 1)
-texture = ExtResource("2_mqfir")
+texture = ExtResource("3_cegyj")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_rit2p")

@@ -15,6 +15,7 @@ var building = false
 var cost
 
 var tower1 = preload("res://Towers/tower.tscn")
+var tower2 = preload("res://Towers/battery.tscn")
 
 var inventoryOn = false;
 var invOpen
@@ -46,12 +47,23 @@ func _on_inventory_button_pressed():
 
 func _on_tower1_button_pressed():
 	if building == false:
-		if towerSelect == 0 and money >= 10:
+		if money >= 10:
 			invOpen.hide()
 			invClosed.show()
 			inventoryOn = false
 			instanceTower = tower1.instantiate()
 			cost = 10
+			building = true
+			add_child(instanceTower)
+
+func _on_tower2_button_pressed():
+	if building == false:
+		if  money >= 15:
+			invOpen.hide()
+			invClosed.show()
+			inventoryOn = false
+			instanceTower = tower2.instantiate()
+			cost = 15
 			building = true
 			add_child(instanceTower)
 
@@ -70,3 +82,6 @@ func _on_open_shop():
 
 func add_money(coin):
 	money += coin
+
+
+

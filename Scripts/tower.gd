@@ -6,6 +6,7 @@ var enemies = []
 var current_enemy
 
 var building = true
+@export var towerType = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -30,16 +31,20 @@ func _physics_process(delta):
 func _on_tower_shoot_timer_timeout():#bang!
 	if building == false:
 		if enemies != []:
-			current_enemy = enemies[0]#selects first enemy to enter radius
-			if current_enemy.get_parent().dead:
-				enemies.erase(current_enemy)
-				_on_tower_shoot_timer_timeout()
-			else:
-				shoot()
+			for e in enemies:
+				if e.get_parent().dead:
+					enemies.erase(current_enemy)
+		if towerType == 0:
+				current_enemy = enemies[0]#selects first enemy to enter radius
+				shoot(current_enemy)
+		if towerType == 1:
+			if enemies != []:
+				for i in enemies:
+					shoot(i);
 
-func shoot():
+func shoot(target):
 	var bullet = bulletScene.instantiate()
-	bullet.target = current_enemy#give bullet enemy
+	bullet.target = target#give bullet enemy
 	add_child(bullet)#spawn bullet that eventually deletes itself
 
 
@@ -55,3 +60,7 @@ func _on_shoot_radius_area_exited(area):
 	if area.is_in_group("Enemy"):
 		if building == false:
 			enemies.erase(area)
+
+
+func _on_upgrade_pressed():
+	pass # Replace with function body.
