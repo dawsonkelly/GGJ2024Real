@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://dm4p5axxlie5w"]
+
+[ext_resource type="Texture2D" uid="uid://oemru0ebscap" path="res://Sprites/Popups/resort (1).png" id="1_p5qi3"]
+[ext_resource type="Script" path="res://Scripts/ad_script.gd" id="1_v32vv"]
+
+[node name="Ad6" type="Node2D"]
+script = ExtResource("1_v32vv")
+
+[node name="AdImage" type="Sprite2D" parent="."]
+texture = ExtResource("1_p5qi3")
+
+[node name="CloseButton" type="TextureButton" parent="."]
+offset_left = 127.0
+offset_top = -148.0
+offset_right = 148.0
+offset_bottom = -127.0
+
+[connection signal="pressed" from="CloseButton" to="." method="_on_close_button_pressed"]

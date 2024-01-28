@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://dpiosbl460v4p"]
+
+[ext_resource type="Script" path="res://Scripts/ad_script.gd" id="1_kyj3i"]
+[ext_resource type="Texture2D" uid="uid://cr1tj0wh6wauj" path="res://Sprites/Popups/chicken.png" id="1_pbta8"]
+
+[node name="Ad1" type="Node2D"]
+script = ExtResource("1_kyj3i")
+
+[node name="AdImage" type="Sprite2D" parent="."]
+texture = ExtResource("1_pbta8")
+
+[node name="CloseButton" type="TextureButton" parent="."]
+offset_left = 127.0
+offset_top = -148.0
+offset_right = 148.0
+offset_bottom = -127.0
+metadata/_edit_use_anchors_ = true
+
+[connection signal="pressed" from="CloseButton" to="." method="_on_close_button_pressed"]
