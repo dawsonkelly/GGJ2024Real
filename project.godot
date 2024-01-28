@@ -10,8 +10,8 @@ config_version=5
 
 [application]
 
-config/name="Gamer Squad"
-run/main_scene="res://Scenes/Game.tscn"
+config/name="Porch Pirates"
+run/main_scene="res://Scenes/main_menu.tscn"
 config/features=PackedStringArray("4.2", "GL Compatibility")
 config/icon="res://Sprites/icon.svg"
 
