@@ -1,6 +1,9 @@
-[gd_scene load_steps=2 format=3 uid="uid://bofpdih51u3sp"]
+[gd_scene load_steps=2 format=3 uid="uid://cdkfdj3x44jld"]
 
 [ext_resource type="Script" path="res://Scripts/Wave.gd" id="1_bty1u"]
 
 [node name="Wave" type="Node2D"]
 script = ExtResource("1_bty1u")
+spawnTime = 2.0
+smallPirate = 20
+pirate = 80
