@@ -1,22 +1,27 @@
-[gd_scene load_steps=4 format=3 uid="uid://c6apdp7ujregg"]
+[gd_scene load_steps=5 format=3 uid="uid://c6apdp7ujregg"]
 
 [ext_resource type="Script" path="res://Scripts/enemy.gd" id="1_g6ftn"]
 [ext_resource type="Texture2D" uid="uid://b7k45e2i6aqet" path="res://Sprites/icon.svg" id="2_mmgsl"]
+[ext_resource type="PackedScene" uid="uid://de82cavbgagq6" path="res://Scenes/package.tscn" id="2_qlu6h"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_eup5j"]
 size = Vector2(128, 129)
 
 [node name="Pirate" type="PathFollow2D" groups=["Enemy"]]
 script = ExtResource("1_g6ftn")
+packageScene = ExtResource("2_qlu6h")
 
 [node name="Area2D" type="Area2D" parent="." groups=["Enemy"]]
+scale = Vector2(0.745, 0.745)
 
 [node name="Sprite2D" type="Sprite2D" parent="Area2D" groups=["Enemy"]]
 self_modulate = Color(1, 0, 1, 1)
+scale = Vector2(0.745, 0.745)
 texture = ExtResource("2_mmgsl")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" groups=["Enemy"]]
 position = Vector2(0, -0.5)
+scale = Vector2(0.745, 0.745)
 shape = SubResource("RectangleShape2D_eup5j")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

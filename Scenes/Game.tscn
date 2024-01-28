@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://cocvks5qqd80p"]
+[gd_scene load_steps=14 format=3 uid="uid://cocvks5qqd80p"]
 
 [ext_resource type="Script" path="res://Scripts/MainGame.gd" id="1_lwarc"]
 [ext_resource type="PackedScene" uid="uid://bk8o00im2jvi5" path="res://Scenes/Tilemaps/tile_map_one.tscn" id="1_rjw5u"]
@@ -11,12 +11,13 @@
 [ext_resource type="PackedScene" uid="uid://bn6d6k44itruv" path="res://Scenes/porch.tscn" id="8_mi0vb"]
 [ext_resource type="Texture2D" uid="uid://22ysptgmtyce" path="res://Sprites/Package Bay.png" id="9_amosc"]
 [ext_resource type="Texture2D" uid="uid://dscvlls38cw1" path="res://Sprites/Pirate ship.png" id="11_6s6d1"]
+[ext_resource type="PackedScene" uid="uid://btqyt4gelvdkp" path="res://Scenes/pirate_return_area.tscn" id="12_60r48"]
 
 [sub_resource type="Curve2D" id="Curve2D_l5sy7"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 1159, 1042, 0, 0, 0, 0, 1166.01, 875, 0, 0, 0, 0, 132.977, 885, 0, 0, 0, 0, 138.983, 138, 0, 0, 0, 0, 747.59, 139, 0, 0, 0, 0, 755.598, 432, 0, 0, 0, 0, 436.279, 439, 0, 0, 0, 0, 436.279, 590, 0, 0, 0, 0, 1455.29, 594, 0, 0, 0, 0, 1459.3, 846, 0, 0, 0, 0, 2131.97, 841, 0, 0, 0, 0, 2128.97, 373, 0, 0, 0, 0, 1169, 373, 0, 0, 0, 0, 1164, 164, 0, 0, 0, 0, 1205, 162, 0, 0, 0, 0, 1207, 340, 0, 0, 0, 0, 2168.01, 336, 0, 0, 0, 0, 2169.01, 881, 0, 0, 0, 0, 1421.26, 880, 0, 0, 0, 0, 1421.26, 625, 0, 0, 0, 0, 392.235, 631, 0, 0, 0, 0, 394.237, 392, 0, 0, 0, 0, 715.558, 394, 0, 0, 0, 0, 715.558, 178, 0, 0, 0, 0, 177.021, 177, 0, 0, 0, 0, 178.022, 844, 0, 0, 0, 0, 1202.04, 846, 0, 0, 0, 0, 1209.05, 1051)
+"points": PackedVector2Array(0, 0, 0, 0, 1178.02, 967, 0, 0, 0, 0, 1174.01, 871, 0, 0, 0, 0, 171.015, 866, 0, 0, 0, 0, 165.009, 157, 0, 0, 0, 0, 731.574, 157, 0, 0, 0, 0, 735.578, 407, 0, 0, 0, 0, 423.266, 416, 0, 0, 0, 0, 423.266, 602, 0, 0, 0, 0, 1443.28, 602, 0, 0, 0, 0, 1451.29, 843, 0, 0, 0, 0, 2144.98, 855, 0, 0, 0, 0, 2148.99, 355, 0, 0, 0, 0, 1190.03, 356, 0, 0, 0, 0, 1186.03, 158)
 }
-point_count = 28
+point_count = 14
 
 [node name="Game" type="Node2D"]
 script = ExtResource("1_lwarc")
@@ -141,6 +142,9 @@ z_index = 10
 position = Vector2(1175, 1090)
 scale = Vector2(1.95062, 1.95062)
 texture = ExtResource("11_6s6d1")
+
+[node name="PirateReturnArea" parent="." instance=ExtResource("12_60r48")]
+position = Vector2(1183, 1040)
 
 [connection signal="timeout" from="Path2D/EnemySpawnTimer" to="Path2D" method="_on_enemy_spawn_timer_timeout"]
 [connection signal="pressed" from="GUI/Inventory/Open/TextureButton" to="." method="_on_tower1_button_pressed"]
