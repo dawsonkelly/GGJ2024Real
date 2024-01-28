@@ -15,6 +15,7 @@ var hasPackage = false
 
 @export var regTex : Texture
 @export var runTex : Texture
+@export var package : Sprite2D
 
 @export var packageScene : PackedScene
 
@@ -22,6 +23,7 @@ var sprite
 
 func _ready():
 		sprite = get_node("Area2D/Sprite")
+		package.hide()
 
 func _process(delta):
 	if enter:
@@ -44,7 +46,7 @@ func hit():
 	dead = true
 	if hasPackage:
 		hasPackage = false;
-		get_node("$package")
+		package.hide()
 	sprite.set_texture(runTex)#crashes rn
 	print("IVE BEEN HIT IN THE BUTT OWWWWWW")
 	get_node("/root/Game/").add_money(1)
@@ -52,8 +54,8 @@ func hit():
 
 func take_package():
 	hasPackage = true
-	var package = packageScene.instantiate()
-	add_child(package)
+	package.show()
+	goinIn = false;
 
 func return_to_ship():
 	queue_free()

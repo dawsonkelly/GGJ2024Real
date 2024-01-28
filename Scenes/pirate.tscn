@@ -1,26 +1,29 @@
-[gd_scene load_steps=6 format=3 uid="uid://c6apdp7ujregg"]
+[gd_scene load_steps=7 format=3 uid="uid://c6apdp7ujregg"]
 
 [ext_resource type="Script" path="res://Scripts/enemy.gd" id="1_g6ftn"]
 [ext_resource type="Texture2D" uid="uid://0ykpieaikvcc" path="res://Sprites/Pirate.png" id="2_5hj27"]
 [ext_resource type="PackedScene" uid="uid://xjg5d5l4oqc3" path="res://Scenes/package.tscn" id="2_qlu6h"]
 [ext_resource type="Texture2D" uid="uid://to7uspsprks6" path="res://Sprites/PirateSick.png" id="3_6oseb"]
+[ext_resource type="Texture2D" uid="uid://cppu0vdqdgdfq" path="res://Sprites/Package Bay logo.png" id="5_rbsk3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_eup5j"]
 size = Vector2(128, 129)
 
-[node name="Pirate" type="PathFollow2D" groups=["Enemy"]]
+[node name="Pirate" type="PathFollow2D" node_paths=PackedStringArray("package") groups=["Enemy"]]
+rotates = false
 loop = false
 script = ExtResource("1_g6ftn")
 regTex = ExtResource("2_5hj27")
 runTex = ExtResource("3_6oseb")
+package = NodePath("Area2D/Package")
 packageScene = ExtResource("2_qlu6h")
 
 [node name="Area2D" type="Area2D" parent="." groups=["Enemy"]]
 scale = Vector2(0.745, 0.745)
 
-[node name="Sprite" type="Sprite2D" parent="Area2D" groups=["Enemy"]]
-position = Vector2(-1.60933e-06, -0.671139)
-scale = Vector2(0.579998, 0.5606)
+[node name="Image" type="Sprite2D" parent="Area2D" groups=["Enemy"]]
+position = Vector2(0, -37.584)
+scale = Vector2(1.034, 1)
 texture = ExtResource("2_5hj27")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" groups=["Enemy"]]
@@ -28,7 +31,9 @@ position = Vector2(0, -0.5)
 scale = Vector2(0.745, 0.745)
 shape = SubResource("RectangleShape2D_eup5j")
 
-[node name="Package" parent="Area2D" instance=ExtResource("2_qlu6h")]
-position = Vector2(0, 21.4765)
+[node name="Package" type="Sprite2D" parent="Area2D"]
+visible = false
+scale = Vector2(0.277778, 0.277778)
+texture = ExtResource("5_rbsk3")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
