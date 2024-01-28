@@ -22,7 +22,7 @@
 [ext_resource type="Texture2D" uid="uid://c4iacoxiabajc" path="res://Sprites/inv1.png" id="14_mel4h"]
 [ext_resource type="Texture2D" uid="uid://cp6ab1s5q7xgd" path="res://Sprites/inv3.png" id="15_4u8dw"]
 [ext_resource type="Texture2D" uid="uid://bwugv5lhxbixt" path="res://Sprites/inv2.png" id="16_w5i38"]
-[ext_resource type="PackedScene" uid="uid://cwblbp4bj2ph" path="res://Scenes/AdHandler.tscn" id="25_pfcyd"]
+[ext_resource type="PackedScene" path="res://Scenes/AdHandler.tscn" id="25_pfcyd"]
 [ext_resource type="PackedScene" uid="uid://bmklgqeiiqhsq" path="res://Waves/Wave (2).tscn" id="26_pveku"]
 [ext_resource type="Texture2D" uid="uid://bu0qbh101qdvl" path="res://Sprites/PackageBayWebsite1.png" id="31_4t67p"]
 
@@ -32,7 +32,7 @@ _data = {
 }
 point_count = 14
 
-[node name="Game2" type="Node2D" node_paths=PackedStringArray("shopWindow", "shopSprite", "shopButton", "premiumButton")]
+[node name="Game" type="Node2D" node_paths=PackedStringArray("shopWindow", "shopSprite", "shopButton", "premiumButton")]
 script = ExtResource("1_lwarc")
 shopWindow = NodePath("GUI/Shop/Website")
 shopSprite = NodePath("GUI/Shop/Website/Shop1")
