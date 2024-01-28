@@ -150,7 +150,6 @@ texture_normal = ExtResource("18_wu0a8")
 stretch_mode = 0
 
 [node name="Website" type="Node2D" parent="GUI/Shop"]
-visible = false
 
 [node name="Shop1" type="Sprite2D" parent="GUI/Shop/Website"]
 position = Vector2(1315, 637)
@@ -178,6 +177,7 @@ offset_right = 1907.0
 offset_bottom = 69.0
 
 [node name="Premium" type="TextureButton" parent="GUI/Shop/Website"]
+z_index = 100
 offset_left = 1224.0
 offset_top = 546.0
 offset_right = 1439.0
@@ -242,4 +242,5 @@ autoplay = true
 [connection signal="pressed" from="GUI/Inventory/TextureButton" to="." method="_on_inventory_button_pressed"]
 [connection signal="pressed" from="GUI/Shop/ShopOpen" to="." method="_on_open_shop"]
 [connection signal="pressed" from="GUI/Shop/Website/ShopClose" to="." method="_on_close_shop"]
+[connection signal="pressed" from="GUI/Shop/Website/Premium" to="." method="_on_premium"]
 [connection signal="pressed" from="GUI/Nextwave/Next Wave button" to="Path2D" method="start_wave"]
