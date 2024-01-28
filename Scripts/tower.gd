@@ -26,10 +26,10 @@ func _physics_process(delta):
 		pass
 	else:
 		global_position = get_global_mouse_position()
-		if Input.is_action_just_pressed("click"):
+		if Input.is_action_just_pressed("click") and is_above_tower() == false:#TODO: checker for if above other tower
 			building = false
 			get_parent().tower_built()
-		if Input.is_action_just_pressed("cancel"):
+		if Input.is_action_just_pressed("cancel"):#right mouse click for now
 			get_parent().cancel()
 			queue_free()
 			
@@ -55,6 +55,9 @@ func _on_tower_shoot_timer_timeout():#bang!
 				if enemies != []:
 					for i in enemies:
 						shoot(i);
+
+func is_above_tower():
+	return false
 
 func shoot(target):
 	var bullet = bulletScene.instantiate()
