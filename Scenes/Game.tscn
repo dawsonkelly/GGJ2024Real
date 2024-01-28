@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=3 uid="uid://cocvks5qqd80p"]
+[gd_scene load_steps=24 format=3 uid="uid://cocvks5qqd80p"]
 
 [ext_resource type="Script" path="res://Scripts/MainGame.gd" id="1_lwarc"]
 [ext_resource type="PackedScene" uid="uid://bk8o00im2jvi5" path="res://Scenes/Tilemaps/tile_map_one.tscn" id="1_rjw5u"]
@@ -21,18 +21,6 @@
 [ext_resource type="Texture2D" uid="uid://dscvlls38cw1" path="res://Sprites/Pirate ship.png" id="11_6s6d1"]
 [ext_resource type="Texture2D" uid="uid://be0j6cefkljo8" path="res://Sprites/box.png" id="11_js7i1"]
 [ext_resource type="PackedScene" uid="uid://d2530xk7hgwxc" path="res://Pirates/BigPirate.tscn" id="11_on4uc"]
-[ext_resource type="PackedScene" uid="uid://bofpdih51u3sp" path="res://Waves/Wave (8).tscn" id="12_5enbc"]
-[ext_resource type="PackedScene" uid="uid://bofpdih51u3sp" path="res://Waves/Wave (9).tscn" id="13_20q0f"]
-[ext_resource type="PackedScene" uid="uid://bofpdih51u3sp" path="res://Waves/Wave (10).tscn" id="14_wl2vf"]
-[ext_resource type="PackedScene" uid="uid://bofpdih51u3sp" path="res://Waves/Wave (11).tscn" id="15_h1vvr"]
-[ext_resource type="PackedScene" uid="uid://bofpdih51u3sp" path="res://Waves/Wave (12).tscn" id="16_3gv3d"]
-[ext_resource type="PackedScene" uid="uid://bofpdih51u3sp" path="res://Waves/Wave (13).tscn" id="17_ovkhr"]
-[ext_resource type="PackedScene" uid="uid://bofpdih51u3sp" path="res://Waves/Wave (14).tscn" id="18_u366j"]
-[ext_resource type="PackedScene" uid="uid://bofpdih51u3sp" path="res://Waves/Wave (15).tscn" id="19_qjjro"]
-[ext_resource type="PackedScene" uid="uid://bofpdih51u3sp" path="res://Waves/Wave (16).tscn" id="22_xm7t1"]
-[ext_resource type="PackedScene" uid="uid://bofpdih51u3sp" path="res://Waves/Wave (17).tscn" id="23_4tu6j"]
-[ext_resource type="PackedScene" uid="uid://bofpdih51u3sp" path="res://Waves/Wave (18).tscn" id="24_ikffg"]
-[ext_resource type="PackedScene" uid="uid://bofpdih51u3sp" path="res://Waves/Wave (19).tscn" id="25_iumiu"]
 [ext_resource type="PackedScene" uid="uid://bofpdih51u3sp" path="res://Waves/Wave (20).tscn" id="26_pveku"]
 
 [sub_resource type="Curve2D" id="Curve2D_l5sy7"]
@@ -54,7 +42,7 @@ scale = Vector2(0.999003, 1)
 curve = SubResource("Curve2D_l5sy7")
 script = ExtResource("2_4fg0s")
 pirates = Array[PackedScene]([ExtResource("9_waeb8"), ExtResource("3_2k6mc"), ExtResource("11_on4uc")])
-waves = Array[PackedScene]([ExtResource("5_ka6wi"), ExtResource("5_ka6wi"), ExtResource("6_q13pr"), ExtResource("7_ckglo"), ExtResource("8_f4vgn"), ExtResource("9_kochc"), ExtResource("10_8fa6b"), ExtResource("26_pveku"), ExtResource("12_5enbc"), ExtResource("13_20q0f"), ExtResource("14_wl2vf"), ExtResource("15_h1vvr"), ExtResource("16_3gv3d"), ExtResource("17_ovkhr"), ExtResource("18_u366j"), ExtResource("19_qjjro"), ExtResource("22_xm7t1"), ExtResource("23_4tu6j"), ExtResource("24_ikffg"), ExtResource("25_iumiu"), ExtResource("26_pveku")])
+waves = Array[PackedScene]([ExtResource("5_ka6wi"), ExtResource("5_ka6wi"), ExtResource("6_q13pr"), ExtResource("7_ckglo"), ExtResource("8_f4vgn"), ExtResource("9_kochc"), ExtResource("10_8fa6b"), ExtResource("26_pveku"), ExtResource("26_pveku"), ExtResource("26_pveku"), ExtResource("26_pveku"), ExtResource("26_pveku"), ExtResource("26_pveku"), ExtResource("26_pveku"), ExtResource("26_pveku"), ExtResource("26_pveku"), ExtResource("26_pveku"), ExtResource("26_pveku"), ExtResource("26_pveku"), ExtResource("26_pveku"), ExtResource("26_pveku")])
 waveButton = NodePath("../GUI/Nextwave")
 
 [node name="EnemySpawnTimer" type="Timer" parent="Path2D"]
@@ -185,10 +173,9 @@ texture = ExtResource("11_js7i1")
 position = Vector2(214.546, 90.9091)
 texture = ExtResource("11_js7i1")
 
-[node name="Ship" type="Sprite2D" parent="."]
-z_index = 10
-position = Vector2(1171, 1077)
-scale = Vector2(1.95062, 1.95062)
+[node name="PirateShip" type="Sprite2D" parent="."]
+position = Vector2(1169.25, 1117.75)
+scale = Vector2(2.36111, 1.70294)
 texture = ExtResource("11_6s6d1")
 
 [connection signal="timeout" from="Path2D/EnemySpawnTimer" to="Path2D" method="_on_enemy_spawn_timer_timeout"]

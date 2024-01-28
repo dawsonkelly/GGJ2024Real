@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://7hdwp6qfm8u6"]
+
+[ext_resource type="Texture2D" uid="uid://b2xgnh61b7wux" path="res://Sprites/Popups/popup1.png" id="1_hdain"]
+[ext_resource type="Script" path="res://Scripts/ad_script.gd" id="1_wulak"]
+
+[node name="Ad4" type="Node2D"]
+script = ExtResource("1_wulak")
+
+[node name="AdImage" type="Sprite2D" parent="."]
+texture = ExtResource("1_hdain")
+
+[node name="CloseButton" type="TextureButton" parent="."]
+offset_left = 127.0
+offset_top = -148.0
+offset_right = 148.0
+offset_bottom = -127.0
+
+[connection signal="pressed" from="CloseButton" to="." method="_on_close_button_pressed"]
