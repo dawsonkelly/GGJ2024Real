@@ -14,11 +14,11 @@ func _on_level_1_pressed():
 
 
 func _on_level_2_pressed():#second level
-	pass # Replace with function body.
+	get_tree().change_scene_to_file("res://Scenes/Level2.tscn")
 
 
 func _on_level_3_pressed():#third level
-	pass # Replace with function body.
+	get_tree().change_scene_to_file("res://Scenes/Level3.tscn")
 
 
 func _on_easy_pressed():
