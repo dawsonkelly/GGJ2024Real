@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://Scripts/MainGame.gd" id="1_2bbik"]
 [ext_resource type="PackedScene" uid="uid://bk8o00im2jvi5" path="res://Scenes/Tilemaps/tile_map_one.tscn" id="2_h74s6"]
 [ext_resource type="Script" path="res://Scenes/Tilemaps/enemy_spawn_path.gd" id="3_3vflm"]
-[ext_resource type="PackedScene" uid="uid://c6apdp7ujregg" path="res://Scenes/pirate.tscn" id="4_htopf"]
+[ext_resource type="PackedScene" uid="uid://c6apdp7ujregg" path="res://Pirates/pirate.tscn" id="4_htopf"]
 [ext_resource type="PackedScene" uid="uid://g55e88eesyxv" path="res://Towers/tower.tscn" id="5_20n74"]
 
 [sub_resource type="Curve2D" id="Curve2D_l5sy7"]

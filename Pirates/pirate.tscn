@@ -1,9 +1,9 @@
 [gd_scene load_steps=7 format=3 uid="uid://c6apdp7ujregg"]
 
 [ext_resource type="Script" path="res://Scripts/enemy.gd" id="1_g6ftn"]
-[ext_resource type="Texture2D" uid="uid://0ykpieaikvcc" path="res://Sprites/Pirate.png" id="2_5hj27"]
+[ext_resource type="Texture2D" uid="uid://b0p872ty6hq44" path="res://Sprites/Pirates/Pirate.png" id="2_ljpm4"]
 [ext_resource type="PackedScene" uid="uid://xjg5d5l4oqc3" path="res://Scenes/package.tscn" id="2_qlu6h"]
-[ext_resource type="Texture2D" uid="uid://to7uspsprks6" path="res://Sprites/PirateSick.png" id="3_6oseb"]
+[ext_resource type="Texture2D" uid="uid://deiidvn07hf5x" path="res://Sprites/Pirates/PirateB.png" id="3_gxqh7"]
 [ext_resource type="Texture2D" uid="uid://be0j6cefkljo8" path="res://Sprites/box.png" id="5_xoeo5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_eup5j"]
@@ -13,8 +13,8 @@ size = Vector2(128, 129)
 rotates = false
 loop = false
 script = ExtResource("1_g6ftn")
-regTex = ExtResource("2_5hj27")
-runTex = ExtResource("3_6oseb")
+regTex = ExtResource("2_ljpm4")
+runTex = ExtResource("3_gxqh7")
 package = NodePath("Area2D/Package")
 packageScene = ExtResource("2_qlu6h")
 
@@ -22,9 +22,9 @@ packageScene = ExtResource("2_qlu6h")
 scale = Vector2(0.745, 0.745)
 
 [node name="Image" type="Sprite2D" parent="Area2D" groups=["Enemy"]]
-position = Vector2(0, -37.584)
-scale = Vector2(1.034, 1)
-texture = ExtResource("2_5hj27")
+position = Vector2(2.38419e-07, -30.8725)
+scale = Vector2(0.474734, 0.459068)
+texture = ExtResource("2_ljpm4")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" groups=["Enemy"]]
 position = Vector2(0, -0.5)
