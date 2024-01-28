@@ -4,6 +4,8 @@ var money = 20
 var health = 5#packages
 var subscription = 0
 
+var difficulty = 1 # for storing difficulty as 1 2 or 3
+
 var inWave = false
 var wave = 0
 var enemies_left = 0
@@ -25,7 +27,7 @@ var invClosed
 func _ready():
 	invOpen = get_node("GUI/Inventory/Open")
 	invClosed = get_node("GUI/Inventory/Closed")
-	
+	difficulty = get_node("/root/GlobalVariables").difficulty
 	
 	#for filePath in DirAccess.get_files_at("res://Towers/"):
 	#	if filePath.get_extension() == "tscn":  

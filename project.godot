@@ -15,10 +15,15 @@ run/main_scene="res://Scenes/main_menu.tscn"
 config/features=PackedStringArray("4.2", "GL Compatibility")
 config/icon="res://Sprites/icon.svg"
 
+[autoload]
+
+GlobalVariables="*res://Scripts/global_variables.gd"
+
 [display]
 
 window/size/viewport_width=2300
 window/size/viewport_height=1280
+window/size/mode=2
 window/stretch/mode="viewport"
 window/stretch/aspect="expand"
 

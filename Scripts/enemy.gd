@@ -11,7 +11,7 @@ var goinIn = true
 
 var hasPackage = false
 
-@export var speed = 1000#test at 1000
+@export var speed = 100#test at 1000
 
 @export var regTex : Texture
 @export var runTex : Texture

@@ -26,12 +26,15 @@ texture = ExtResource("2_d01sf")
 
 [node name="QuitButton" type="Button" parent="."]
 layout_mode = 0
-offset_left = 1447.0
-offset_top = 612.0
-offset_right = 1605.0
-offset_bottom = 713.0
+offset_left = 1734.0
+offset_top = 52.0
+offset_right = 2228.0
+offset_bottom = 316.0
 theme = SubResource("Theme_6412x")
-text = "Quit"
+text = "Quit
+(A TRUE GENTLEMAN 
+OF FORTUNE NE'ER WALKS
+THE PLANK)"
 icon = ExtResource("3_khdnl")
 expand_icon = true
 
@@ -39,10 +42,10 @@ expand_icon = true
 layout_mode = 0
 offset_left = 139.0
 offset_top = 396.0
-offset_right = 421.0
+offset_right = 595.0
 offset_bottom = 551.0
 theme = SubResource("Theme_fvenp")
-text = "Level 1"
+text = "Jab here t' play level one matey!"
 icon = ExtResource("3_hluox")
 expand_icon = true
 
@@ -50,9 +53,10 @@ expand_icon = true
 layout_mode = 0
 offset_left = 139.0
 offset_top = 568.0
-offset_right = 422.0
+offset_right = 595.0
 offset_bottom = 721.0
-text = "Level 2"
+text = "Skewer here t' play level two 
+ye dirty dog!"
 icon = ExtResource("3_hluox")
 expand_icon = true
 
@@ -60,13 +64,48 @@ expand_icon = true
 layout_mode = 0
 offset_left = 139.0
 offset_top = 740.0
-offset_right = 422.0
+offset_right = 595.0
 offset_bottom = 890.0
-text = "Level 3"
+text = "Poke here t' play level three
+swashbuckler!"
 icon = ExtResource("3_hluox")
 expand_icon = true
+
+[node name="EASY" type="Button" parent="."]
+self_modulate = Color(0, 1, 0, 1)
+layout_mode = 0
+offset_left = 1900.0
+offset_top = 399.0
+offset_right = 2180.0
+offset_bottom = 551.0
+text = "'ave yerslef a voyage
+on calm seas"
+
+[node name="NORMAL" type="Button" parent="."]
+self_modulate = Color(0.996078, 1, 0, 1)
+layout_mode = 0
+offset_left = 1900.0
+offset_top = 567.0
+offset_right = 2185.0
+offset_bottom = 720.0
+text = "Set sail on an adventure 
+worthy o' treasure"
+
+[node name="HARD" type="Button" parent="."]
+self_modulate = Color(1, 0, 0, 1)
+layout_mode = 0
+offset_left = 1900.0
+offset_top = 741.0
+offset_right = 2180.0
+offset_bottom = 889.0
+text = "'AVE YERSELF HARSHIP 
+'FORE YE ABANDON SHIP
+"
 
 [connection signal="pressed" from="QuitButton" to="." method="_on_quit_button_pressed"]
 [connection signal="pressed" from="Level 1" to="." method="_on_level_1_pressed"]
 [connection signal="pressed" from="Level 2" to="." method="_on_level_2_pressed"]
 [connection signal="pressed" from="Level 3" to="." method="_on_level_3_pressed"]
+[connection signal="pressed" from="EASY" to="." method="_on_easy_pressed"]
+[connection signal="pressed" from="NORMAL" to="." method="_on_normal_pressed"]
+[connection signal="pressed" from="HARD" to="." method="_on_hard_pressed"]
