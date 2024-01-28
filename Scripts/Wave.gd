@@ -1,11 +1,11 @@
 extends Node
 
+@export var spawnTime : float
 
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
+@export var smallPirate : int
+@export var pirate : int
+@export var bigPirate : int
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
+@export var speedPirate : int
+@export var goodPirate : int
+@export var heavyPirate : int
