@@ -48,7 +48,7 @@ func _on_tower_shoot_timer_timeout():#bang!
 				for e in enemies:
 					if e.get_parent().dead:
 						enemies.erase(current_enemy)
-			if towerType == 0:
+			if towerType == 0 and enemies != []:
 					current_enemy = enemies[0]#selects first enemy to enter radius
 					shoot(current_enemy)
 			if towerType == 1:
