@@ -19,4 +19,4 @@ func _on_area_entered(area):#look for pirate entering area!!
 			pass
 		else:
 			pass
-			area.get_parent().take_package()
+			#if we want to take damage to the porch here

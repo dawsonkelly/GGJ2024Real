@@ -11,7 +11,7 @@ var goinIn = true
 
 var hasPackage = false
 
-@export var speed = 100#test at 1000
+@export var speed = 1000#test at 1000
 
 @export var regTex : Texture
 @export var runTex : Texture
@@ -60,5 +60,8 @@ func take_package():
 	goinIn = false;
 
 func return_to_ship():
+	#if not dead they have a package
+	if dead == false:
+		get_node("/root/Game/").take_damage()
 	queue_free()
 

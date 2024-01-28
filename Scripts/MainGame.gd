@@ -1,7 +1,7 @@
 extends Node2D
 
 var money = 20
-var health = 10
+var health = 10#packages
 var subscription = 0
 
 var inWave = false
@@ -33,6 +33,7 @@ func _ready():
 
 func _process(delta):
 	$GUI/Money.text = "P-Bucks: " + str (money)
+	$GUI/Money2.text = "Packages: " + str(health)
 
 func _on_inventory_button_pressed():
 	if !building:
@@ -86,8 +87,13 @@ func tower_built():
 func cancel():
 	building = false
 
+func take_damage():
+	health -= 1
+	if health <= 0:
+		game_over()
+
 func game_over():
-	pass
+	print("GAME OVER")
 
 func _on_open_shop():
 	pass # Replace with function body.
