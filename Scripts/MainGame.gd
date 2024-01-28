@@ -2,7 +2,7 @@ extends Node2D
 
 var money = 20
 var health = 5#packages
-var subscription = 0
+var subscription = false
 
 var difficulty = 1 # for storing difficulty as 1 2 or 3
 
@@ -26,8 +26,10 @@ var invClosed
 
 @export var shopWindow : Node2D
 @export var shopButton : TextureButton
+@export var premiumTexture : Texture2D
+@export var premiumButton : TextureButton
 @export var upgradeButton : TextureButton
-@export var upgradeTexture : Texture2D
+
 
 func _ready():
 	invOpen = get_node("GUI/Inventory/Open")
@@ -117,7 +119,12 @@ func _on_close_shop():
 func add_money(coin):
 	money += coin
 
-
+func _on_premium():
+	if money >= 69:
+		money -= 69
+		subscription = true
+		health += 5
+		premiumButton.hide()
 
 
 

@@ -62,46 +62,46 @@ scale = Vector2(1.2, 1.2)
 texture = ExtResource("5_lh501")
 
 [node name="TextureRect" type="TextureRect" parent="GUI/Inventory/Open"]
-offset_left = -137.188
-offset_top = -460.441
-offset_right = -9.18752
-offset_bottom = -332.441
+offset_left = -145.0
+offset_top = -465.0
+offset_right = 7.0
+offset_bottom = -317.0
 texture = ExtResource("14_mel4h")
 expand_mode = 1
 
 [node name="TextureRect3" type="TextureRect" parent="GUI/Inventory/Open"]
-offset_left = -130.525
-offset_top = -308.774
-offset_right = -2.52441
-offset_bottom = -180.774
+offset_left = -143.025
+offset_top = -307.107
+offset_right = 7.97514
+offset_bottom = -148.107
 texture = ExtResource("15_4u8dw")
 expand_mode = 1
 
 [node name="TextureRect2" type="TextureRect" parent="GUI/Inventory/Open"]
-offset_left = 6.97914
-offset_top = -460.441
-offset_right = 134.979
-offset_bottom = -332.441
+offset_left = 7.0
+offset_top = -465.0
+offset_right = 149.0
+offset_bottom = -317.0
 texture = ExtResource("16_w5i38")
 expand_mode = 1
 
 [node name="Pez tower" type="TextureButton" parent="GUI/Inventory/Open"]
-offset_left = -136.358
-offset_top = -458.774
-offset_right = -8.35843
-offset_bottom = -330.774
+offset_left = -145.0
+offset_top = -465.0
+offset_right = 7.0
+offset_bottom = -317.0
 
 [node name="Pool" type="TextureButton" parent="GUI/Inventory/Open"]
-offset_left = -128.858
-offset_top = -309.607
-offset_right = -0.858215
-offset_bottom = -181.607
+offset_left = -142.192
+offset_top = -307.941
+offset_right = 10.8084
+offset_bottom = -148.941
 
 [node name="Battery" type="TextureButton" parent="GUI/Inventory/Open"]
-offset_left = 6.97513
-offset_top = -460.441
-offset_right = 134.975
-offset_bottom = -332.441
+offset_left = 7.0
+offset_top = -465.0
+offset_right = 149.0
+offset_bottom = -317.0
 
 [node name="Closed" type="Sprite2D" parent="GUI/Inventory"]
 position = Vector2(2104, 639)
@@ -140,7 +140,6 @@ texture_normal = ExtResource("8_62emb")
 stretch_mode = 0
 
 [node name="Website" type="Node2D" parent="GUI/Shop"]
-visible = false
 
 [node name="Shop1" type="Sprite2D" parent="GUI/Shop/Website"]
 position = Vector2(1315, 637)
@@ -152,6 +151,12 @@ offset_left = 1883.0
 offset_top = 44.0
 offset_right = 1907.0
 offset_bottom = 69.0
+
+[node name="Upgrade" type="TextureButton" parent="GUI/Shop/Website"]
+offset_left = 1224.0
+offset_top = 546.0
+offset_right = 1439.0
+offset_bottom = 625.0
 
 [node name="Popups" type="Node2D" parent="GUI"]
 
@@ -204,4 +209,5 @@ texture = ExtResource("11_6s6d1")
 [connection signal="pressed" from="GUI/Inventory/TextureButton" to="." method="_on_inventory_button_pressed"]
 [connection signal="pressed" from="GUI/Shop/ShopOpen" to="." method="_on_open_shop"]
 [connection signal="pressed" from="GUI/Shop/Website/ShopClose" to="." method="_on_close_shop"]
+[connection signal="pressed" from="GUI/Shop/Website/Upgrade" to="." method="_on_premium"]
 [connection signal="pressed" from="GUI/Nextwave/Next Wave button" to="Path2D" method="start_wave"]
