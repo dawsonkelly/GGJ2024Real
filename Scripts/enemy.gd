@@ -22,7 +22,7 @@ var hasPackage = false
 var sprite
 
 func _ready():
-		sprite = get_node("Area2D/Sprite")
+		sprite = get_node("Area2D/Image")
 		package.hide()
 
 func _process(delta):
