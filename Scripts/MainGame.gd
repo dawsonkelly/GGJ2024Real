@@ -1,6 +1,6 @@
 extends Node2D
 
-var money = 100
+var money = 10
 var health = 5#packages
 var subscription = false
 

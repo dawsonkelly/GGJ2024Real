@@ -1,9 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://bxvsv62j4q5ch"]
+[gd_scene load_steps=9 format=3 uid="uid://bxvsv62j4q5ch"]
 
 [ext_resource type="Script" path="res://Scripts/main_menu.gd" id="1_ntxs7"]
 [ext_resource type="Texture2D" uid="uid://nt40hydxki3m" path="res://Sprites/Screenshot 2024-01-27 235756.png" id="2_d01sf"]
 [ext_resource type="Texture2D" uid="uid://753bdewix6f8" path="res://Sprites/treasurechest.png" id="3_hluox"]
 [ext_resource type="Texture2D" uid="uid://to7uspsprks6" path="res://Sprites/PirateSick.png" id="3_khdnl"]
+[ext_resource type="AudioStream" uid="uid://dai16rvge2cwv" path="res://piratey.mp3" id="5_geck0"]
+[ext_resource type="Texture2D" uid="uid://c1b8wv2g2b17o" path="res://Sprites/Popups/title.png" id="6_prevq"]
 
 [sub_resource type="Theme" id="Theme_6412x"]
 
@@ -101,6 +103,16 @@ offset_bottom = 889.0
 text = "'AVE YERSELF HARSHIP 
 'FORE YE ABANDON SHIP
 "
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_geck0")
+volume_db = -7.907
+autoplay = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(802, 144)
+scale = Vector2(1.49187, 2.28571)
+texture = ExtResource("6_prevq")
 
 [connection signal="pressed" from="QuitButton" to="." method="_on_quit_button_pressed"]
 [connection signal="pressed" from="Level 1" to="." method="_on_level_1_pressed"]
