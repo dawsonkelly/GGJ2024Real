@@ -1,6 +1,75 @@
-[gd_scene load_steps=2 format=3 uid="uid://cwblbp4bj2ph"]
+[gd_scene load_steps=8 format=3 uid="uid://cwblbp4bj2ph"]
 
 [ext_resource type="Script" path="res://ad_handler.gd" id="1_8rcj4"]
+[ext_resource type="PackedScene" uid="uid://dpiosbl460v4p" path="res://Scenes/ads/ad_1.tscn" id="2_6soje"]
+[ext_resource type="PackedScene" uid="uid://dce3djmybh5ha" path="res://Scenes/ads/ad_2.tscn" id="3_qm55w"]
+[ext_resource type="PackedScene" uid="uid://d4c8lr2opaqrw" path="res://Scenes/ads/ad_3.tscn" id="4_amqv2"]
+[ext_resource type="PackedScene" uid="uid://7hdwp6qfm8u6" path="res://Scenes/ads/ad_4.tscn" id="5_1h6qs"]
+[ext_resource type="PackedScene" uid="uid://bxx4kosag3oas" path="res://Scenes/ads/ad_5.tscn" id="6_3qgu3"]
+[ext_resource type="PackedScene" uid="uid://dm4p5axxlie5w" path="res://Scenes/ads/ad_6.tscn" id="7_jvut7"]
 
-[node name="AdHandler" type="Node2D"]
+[node name="AdHandler" type="Node2D" node_paths=PackedStringArray("ads")]
 script = ExtResource("1_8rcj4")
+ads = [NodePath("Ad1"), NodePath("Ad2"), NodePath("Ad3"), NodePath("Ad4"), NodePath("Ad5"), NodePath("Ad6"), NodePath("Ad7"), NodePath("Ad8"), NodePath("Ad9"), NodePath("Ad10"), NodePath("Ad11"), NodePath("Ad12"), NodePath("Ad13"), NodePath("Ad14"), NodePath("Ad15"), NodePath("Ad16"), NodePath("Ad17"), NodePath("Ad18"), NodePath("Ad19")]
+
+[node name="Ad1" parent="." instance=ExtResource("2_6soje")]
+position = Vector2(379, 271)
+
+[node name="Ad2" parent="." instance=ExtResource("3_qm55w")]
+position = Vector2(600, 797)
+
+[node name="Ad3" parent="." instance=ExtResource("4_amqv2")]
+position = Vector2(1316, 624)
+
+[node name="Ad4" parent="." instance=ExtResource("5_1h6qs")]
+position = Vector2(1692, 992)
+
+[node name="Ad5" parent="." instance=ExtResource("6_3qgu3")]
+position = Vector2(213, 1023)
+
+[node name="Ad6" parent="." instance=ExtResource("7_jvut7")]
+position = Vector2(1757, 277)
+
+[node name="Ad7" parent="." instance=ExtResource("2_6soje")]
+position = Vector2(1064, 1001)
+
+[node name="Ad8" parent="." instance=ExtResource("3_qm55w")]
+position = Vector2(759, 259)
+
+[node name="Ad9" parent="." instance=ExtResource("4_amqv2")]
+position = Vector2(188, 598)
+
+[node name="Ad10" parent="." instance=ExtResource("5_1h6qs")]
+position = Vector2(2088, 700)
+
+[node name="Ad11" parent="." instance=ExtResource("6_3qgu3")]
+position = Vector2(1154, 238)
+
+[node name="Ad12" parent="." instance=ExtResource("7_jvut7")]
+position = Vector2(738, 590)
+
+[node name="Ad13" parent="." instance=ExtResource("2_6soje")]
+position = Vector2(1239, 537)
+
+[node name="Ad14" parent="." instance=ExtResource("3_qm55w")]
+position = Vector2(1896, 1087)
+
+[node name="Ad15" parent="." instance=ExtResource("7_jvut7")]
+position = Vector2(177, 1098)
+
+[node name="Ad16" parent="." instance=ExtResource("5_1h6qs")]
+position = Vector2(858, 921)
+
+[node name="Ad17" parent="." instance=ExtResource("4_amqv2")]
+position = Vector2(1950, 211)
+
+[node name="Ad18" parent="." instance=ExtResource("2_6soje")]
+position = Vector2(390, 692)
+
+[node name="Ad19" parent="." instance=ExtResource("5_1h6qs")]
+position = Vector2(583, 192)
+
+[node name="AdTimer" type="Timer" parent="."]
+wait_time = 0.5
+
+[connection signal="timeout" from="AdTimer" to="." method="_on_timer_timeout"]
