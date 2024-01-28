@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://cwblbp4bj2ph"]
+[gd_scene load_steps=13 format=3 uid="uid://lr8dubt7by6j"]
 
 [ext_resource type="Script" path="res://ad_handler.gd" id="1_8rcj4"]
 [ext_resource type="PackedScene" uid="uid://dpiosbl460v4p" path="res://Scenes/ads/ad_1.tscn" id="2_6soje"]
@@ -7,11 +7,11 @@
 [ext_resource type="PackedScene" uid="uid://7hdwp6qfm8u6" path="res://Scenes/ads/ad_4.tscn" id="5_1h6qs"]
 [ext_resource type="PackedScene" uid="uid://bxx4kosag3oas" path="res://Scenes/ads/ad_5.tscn" id="6_3qgu3"]
 [ext_resource type="PackedScene" uid="uid://dm4p5axxlie5w" path="res://Scenes/ads/ad_6.tscn" id="7_jvut7"]
-[ext_resource type="PackedScene" uid="uid://bkmk1iirss8bu" path="res://Scenes/ads/ad_7.tscn" id="8_7i045"]
-[ext_resource type="PackedScene" uid="uid://36rnaf4mowsj" path="res://Scenes/ads/ad_8.tscn" id="9_ut63s"]
-[ext_resource type="PackedScene" uid="uid://gkc77k56bqiv" path="res://Scenes/ads/ad_9.tscn" id="10_andvg"]
-[ext_resource type="PackedScene" uid="uid://ddd48o2im40j7" path="res://Scenes/ads/ad_10.tscn" id="11_vdjw4"]
-[ext_resource type="PackedScene" uid="uid://c6uikextd4og6" path="res://Scenes/ads/ad_11.tscn" id="12_abyyc"]
+[ext_resource type="PackedScene" path="res://Scenes/ads/ad_7.tscn" id="8_7i045"]
+[ext_resource type="PackedScene" path="res://Scenes/ads/ad_8.tscn" id="9_ut63s"]
+[ext_resource type="PackedScene" path="res://Scenes/ads/ad_9.tscn" id="10_andvg"]
+[ext_resource type="PackedScene" path="res://Scenes/ads/ad_10.tscn" id="11_vdjw4"]
+[ext_resource type="PackedScene" path="res://Scenes/ads/ad_11.tscn" id="12_abyyc"]
 
 [node name="AdHandler" type="Node2D" node_paths=PackedStringArray("ads")]
 script = ExtResource("1_8rcj4")
@@ -21,120 +21,159 @@ ads = [NodePath("Ad1"), NodePath("Ad2"), NodePath("Ad3"), NodePath("Ad4"), NodeP
 wait_time = 5.0
 
 [node name="Ad1" parent="." instance=ExtResource("2_6soje")]
+z_index = 100
 position = Vector2(379, 271)
 
 [node name="Ad2" parent="." instance=ExtResource("3_qm55w")]
+z_index = 100
 position = Vector2(600, 797)
 
 [node name="Ad3" parent="." instance=ExtResource("4_amqv2")]
+z_index = 100
 position = Vector2(1316, 624)
 
 [node name="Ad4" parent="." instance=ExtResource("5_1h6qs")]
+z_index = 100
 position = Vector2(1692, 992)
 
 [node name="Ad5" parent="." instance=ExtResource("6_3qgu3")]
+z_index = 100
 position = Vector2(213, 1023)
 
 [node name="Ad6" parent="." instance=ExtResource("7_jvut7")]
+z_index = 100
 position = Vector2(1757, 277)
 
 [node name="Ad7" parent="." instance=ExtResource("2_6soje")]
+z_index = 100
 position = Vector2(1064, 1001)
 
 [node name="Ad8" parent="." instance=ExtResource("3_qm55w")]
+z_index = 100
 position = Vector2(759, 259)
 
 [node name="Ad9" parent="." instance=ExtResource("4_amqv2")]
+z_index = 100
 position = Vector2(188, 598)
 
 [node name="Ad10" parent="." instance=ExtResource("5_1h6qs")]
+z_index = 100
 position = Vector2(2088, 700)
 
 [node name="Ad11" parent="." instance=ExtResource("6_3qgu3")]
+z_index = 100
 position = Vector2(1154, 238)
 
 [node name="Ad12" parent="." instance=ExtResource("7_jvut7")]
+z_index = 100
 position = Vector2(738, 590)
 
 [node name="Ad13" parent="." instance=ExtResource("2_6soje")]
+z_index = 100
 position = Vector2(1239, 537)
 
 [node name="Ad14" parent="." instance=ExtResource("3_qm55w")]
+z_index = 100
 position = Vector2(1896, 1087)
 
 [node name="Ad15" parent="." instance=ExtResource("7_jvut7")]
+z_index = 100
 position = Vector2(177, 1098)
 
 [node name="Ad16" parent="." instance=ExtResource("5_1h6qs")]
+z_index = 100
 position = Vector2(858, 921)
 
 [node name="Ad17" parent="." instance=ExtResource("4_amqv2")]
+z_index = 100
 position = Vector2(1950, 211)
 
 [node name="Ad18" parent="." instance=ExtResource("2_6soje")]
+z_index = 100
 position = Vector2(390, 692)
 
 [node name="Ad19" parent="." instance=ExtResource("5_1h6qs")]
+z_index = 100
 position = Vector2(583, 192)
 
 [node name="Ad20" parent="." instance=ExtResource("8_7i045")]
+z_index = 100
 position = Vector2(950, 678)
 
 [node name="Ad21" parent="." instance=ExtResource("9_ut63s")]
+z_index = 100
 position = Vector2(1161, 1038)
 
 [node name="Ad22" parent="." instance=ExtResource("10_andvg")]
+z_index = 100
 position = Vector2(456, 899)
 
 [node name="Ad23" parent="." instance=ExtResource("11_vdjw4")]
+z_index = 100
 position = Vector2(290, 312)
 
 [node name="Ad24" parent="." instance=ExtResource("12_abyyc")]
+z_index = 100
 position = Vector2(1510, 381)
 
 [node name="Ad25" parent="." instance=ExtResource("8_7i045")]
+z_index = 100
 position = Vector2(1793, 696)
 
 [node name="Ad26" parent="." instance=ExtResource("9_ut63s")]
+z_index = 100
 position = Vector2(1377, 944)
 
 [node name="Ad27" parent="." instance=ExtResource("10_andvg")]
+z_index = 100
 position = Vector2(504, 419)
 
 [node name="Ad28" parent="." instance=ExtResource("11_vdjw4")]
+z_index = 100
 position = Vector2(1254, 237)
 
 [node name="Ad29" parent="." instance=ExtResource("12_abyyc")]
+z_index = 100
 position = Vector2(533, 1105)
 
 [node name="Ad30" parent="." instance=ExtResource("8_7i045")]
+z_index = 100
 position = Vector2(1342, 1107)
 
 [node name="Ad31" parent="." instance=ExtResource("9_ut63s")]
+z_index = 100
 position = Vector2(806, 1113)
 
 [node name="Ad32" parent="." instance=ExtResource("10_andvg")]
+z_index = 100
 position = Vector2(2071, 1075)
 
 [node name="Ad33" parent="." instance=ExtResource("11_vdjw4")]
+z_index = 100
 position = Vector2(1593, 648)
 
 [node name="Ad34" parent="." instance=ExtResource("12_abyyc")]
+z_index = 100
 position = Vector2(1887, 128)
 
 [node name="Ad35" parent="." instance=ExtResource("8_7i045")]
+z_index = 100
 position = Vector2(1983, 555)
 
 [node name="Ad36" parent="." instance=ExtResource("9_ut63s")]
+z_index = 100
 position = Vector2(621, 747)
 
 [node name="Ad37" parent="." instance=ExtResource("10_andvg")]
+z_index = 100
 position = Vector2(293, 435)
 
 [node name="Ad38" parent="." instance=ExtResource("11_vdjw4")]
+z_index = 100
 position = Vector2(338, 269)
 
 [node name="Ad39" parent="." instance=ExtResource("12_abyyc")]
+z_index = 100
 position = Vector2(1046, 864)
 
 [connection signal="timeout" from="AdTimer" to="." method="_on_timer_timeout"]

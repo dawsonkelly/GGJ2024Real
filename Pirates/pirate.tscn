@@ -14,6 +14,7 @@ rotates = false
 loop = false
 script = ExtResource("1_g6ftn")
 health = 5
+speed = 200
 regTex = ExtResource("2_ljpm4")
 runTex = ExtResource("3_gxqh7")
 package = NodePath("Area2D/Package")

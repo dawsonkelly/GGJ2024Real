@@ -31,6 +31,7 @@ var invClosed
 @export var premiumButton : TextureButton
 @export var upgradeButton : TextureButton
 @export var ads : Node2D
+@export var free : Sprite2D
 
 func _ready():
 	invOpen = get_node("GUI/Inventory/Open")
@@ -121,13 +122,12 @@ func add_money(coin):
 	money += coin
 
 func _on_premium():
-	if money >= 69:
-		money -= 69
 		subscription = true
 		health += 5
 		premiumButton.hide()
 		shopSprite.texture = premiumTexture
 		ads.show()
+		free.hide()
 
 
 

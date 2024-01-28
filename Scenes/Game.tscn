@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://cocvks5qqd80p"]
+[gd_scene load_steps=29 format=3 uid="uid://cocvks5qqd80p"]
 
 [ext_resource type="Script" path="res://Scripts/MainGame.gd" id="1_lwarc"]
 [ext_resource type="PackedScene" uid="uid://bk8o00im2jvi5" path="res://Scenes/Tilemaps/tile_map_one.tscn" id="1_rjw5u"]
@@ -22,7 +22,8 @@
 [ext_resource type="Texture2D" uid="uid://c4iacoxiabajc" path="res://Sprites/inv1.png" id="14_mel4h"]
 [ext_resource type="Texture2D" uid="uid://cp6ab1s5q7xgd" path="res://Sprites/inv3.png" id="15_4u8dw"]
 [ext_resource type="Texture2D" uid="uid://bwugv5lhxbixt" path="res://Sprites/inv2.png" id="16_w5i38"]
-[ext_resource type="PackedScene" path="res://Scenes/AdHandler.tscn" id="25_pfcyd"]
+[ext_resource type="Texture2D" uid="uid://bc2wie8o480hh" path="res://FREE.png" id="20_l6fwd"]
+[ext_resource type="PackedScene" uid="uid://lr8dubt7by6j" path="res://Scenes/AdHandler.tscn" id="25_pfcyd"]
 [ext_resource type="AudioStream" uid="uid://dai16rvge2cwv" path="res://piratey.mp3" id="26_o2syu"]
 [ext_resource type="PackedScene" uid="uid://bmklgqeiiqhsq" path="res://Waves/Wave (2).tscn" id="26_pveku"]
 [ext_resource type="Texture2D" uid="uid://bu0qbh101qdvl" path="res://Sprites/PackageBayWebsite1.png" id="31_4t67p"]
@@ -33,7 +34,7 @@ _data = {
 }
 point_count = 14
 
-[node name="Game" type="Node2D" node_paths=PackedStringArray("shopWindow", "shopSprite", "shopButton", "premiumButton", "ads")]
+[node name="Game" type="Node2D" node_paths=PackedStringArray("shopWindow", "shopSprite", "shopButton", "premiumButton", "ads", "free")]
 script = ExtResource("1_lwarc")
 shopWindow = NodePath("GUI/Shop/Website")
 shopSprite = NodePath("GUI/Shop/Website/Shop1")
@@ -41,6 +42,7 @@ shopButton = NodePath("GUI/Shop/ShopOpen")
 premiumTexture = ExtResource("2_84mvn")
 premiumButton = NodePath("GUI/Shop/Website/Premium")
 ads = NodePath("AdHandler")
+free = NodePath("GUI/Shop/Website/Shop1/Sprite2D")
 
 [node name="TileMap" parent="." instance=ExtResource("1_rjw5u")]
 
@@ -154,6 +156,20 @@ position = Vector2(1315, 637)
 scale = Vector2(1.2, 1.2)
 texture = ExtResource("31_4t67p")
 
+[node name="Sprite2D" type="Sprite2D" parent="GUI/Shop/Website/Shop1"]
+z_index = 1
+position = Vector2(16.1667, 20.8333)
+scale = Vector2(1.27635, 0.925923)
+texture = ExtResource("20_l6fwd")
+
+[node name="ColorRect" type="ColorRect" parent="GUI/Shop/Website/Shop1/Sprite2D"]
+z_index = 2
+offset_left = -48.5759
+offset_top = -67.5002
+offset_right = 116.424
+offset_bottom = -57.5002
+color = Color(1, 0, 0, 1)
+
 [node name="ShopClose" type="TextureButton" parent="GUI/Shop/Website"]
 offset_left = 1883.0
 offset_top = 44.0
@@ -212,6 +228,8 @@ texture = ExtResource("11_6s6d1")
 
 [node name="AdHandler" parent="." instance=ExtResource("25_pfcyd")]
 visible = false
+z_index = 100
+position = Vector2(37, 28)
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("26_o2syu")

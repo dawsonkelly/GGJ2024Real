@@ -1,5 +1,5 @@
 extends Node2D
-
+var start = false
 @export var ads : Array[Node2D]
 var r = RandomNumberGenerator.new()
 
@@ -16,7 +16,10 @@ func _process(delta):
 
 
 func _on_timer_timeout():#pop up every few seconds
-	r.randomize()
-	var num = r.randi_range(0, (len(ads)-1))
-	print(num)
-	ads[num].show()
+	if start:
+		r.randomize()
+		var num = r.randi_range(0, (len(ads)-1))
+		print(num)
+		ads[num].show()
+	else:
+		start = true

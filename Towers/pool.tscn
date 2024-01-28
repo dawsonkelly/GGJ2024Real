@@ -34,7 +34,7 @@ texture = ExtResource("4_ptp1l")
 shape = SubResource("RectangleShape2D_rit2p")
 
 [node name="TowerShootTimer" type="Timer" parent="."]
-wait_time = 10.0
+wait_time = 5.0
 
 [node name="ShootRadius" type="Area2D" parent="."]
 
