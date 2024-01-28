@@ -1,0 +1,41 @@
+[gd_scene load_steps=7 format=3 uid="uid://burarv1mpjskv"]
+
+[ext_resource type="Script" path="res://Scripts/enemy.gd" id="1_b4tgm"]
+[ext_resource type="Texture2D" uid="uid://bo6ox138niqng" path="res://Sprites/Pirates/BigPirate.png" id="2_5mujc"]
+[ext_resource type="Texture2D" uid="uid://bqnapa08jqq4y" path="res://Sprites/Pirates/BigPirateB.png" id="3_qrx5p"]
+[ext_resource type="PackedScene" uid="uid://xjg5d5l4oqc3" path="res://Scenes/package.tscn" id="4_sja0p"]
+[ext_resource type="Texture2D" uid="uid://be0j6cefkljo8" path="res://Sprites/box.png" id="5_o7opl"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_eup5j"]
+size = Vector2(147.741, 179.139)
+
+[node name="BigPirate" type="PathFollow2D" node_paths=PackedStringArray("package") groups=["Enemy"]]
+rotates = false
+loop = false
+script = ExtResource("1_b4tgm")
+health = 5
+speed = 75
+regTex = ExtResource("2_5mujc")
+runTex = ExtResource("3_qrx5p")
+package = NodePath("Area2D/Package")
+packageScene = ExtResource("4_sja0p")
+
+[node name="Area2D" type="Area2D" parent="." groups=["Enemy"]]
+scale = Vector2(0.745, 0.745)
+
+[node name="Image" type="Sprite2D" parent="Area2D" groups=["Enemy"]]
+position = Vector2(8.05369, -40.2685)
+scale = Vector2(0.520641, 0.512808)
+texture = ExtResource("2_5mujc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" groups=["Enemy"]]
+position = Vector2(2.88022e-06, -19.1768)
+scale = Vector2(0.745, 0.745)
+shape = SubResource("RectangleShape2D_eup5j")
+
+[node name="Package" type="Sprite2D" parent="Area2D"]
+visible = false
+scale = Vector2(0.277778, 0.277778)
+texture = ExtResource("5_o7opl")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

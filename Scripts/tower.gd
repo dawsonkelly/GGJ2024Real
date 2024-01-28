@@ -71,7 +71,8 @@ func _on_shoot_radius_area_entered(area):
 				enemies.append(area)
 			else:
 				if !isAttacking:
-					area.queue_free()
+					area.get_parent().dead = true
+					area.get_parent().return_to_ship()
 					sprite1.hide()
 					sprite2.show()
 					isAttacking = true;

@@ -61,7 +61,7 @@ func take_package():
 
 func return_to_ship():
 	#if not dead they have a package
-	if dead == false:
+	if dead == false and hasPackage:
 		get_node("/root/Game/").take_damage()
 	queue_free()
 
