@@ -32,6 +32,7 @@ func _ready():
 	#for filePath in DirAccess.get_files_at("res://Towers/"):
 	#	if filePath.get_extension() == "tscn":  
 	#		towers.append( load(filePath) )
+	#skfjl
 
 func _process(delta):
 	$GUI/Money.text = "P-Bucks: " + str (money)
