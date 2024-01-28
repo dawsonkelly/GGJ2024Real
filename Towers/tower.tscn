@@ -16,9 +16,8 @@ script = ExtResource("1_6gwu4")
 bulletScene = ExtResource("2_o42v1")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(0, -29)
-scale = Vector2(0.675, 0.707143)
-texture = ExtResource("3_llu3k")
+self_modulate = Color(0, 0, 0.831373, 1)
+texture = ExtResource("2_mqfir")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_rit2p")
