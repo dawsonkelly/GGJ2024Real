@@ -33,6 +33,6 @@ func _on_area_entered(area):#an area has entered the bullet
 			pass
 		else:
 			area.get_parent().hit()
-			queue_free() #or whatever you do to destroy the bullet
+			queue_free()
 
 

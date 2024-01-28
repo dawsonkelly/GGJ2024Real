@@ -14,4 +14,9 @@ func _process(delta):
 
 
 func _on_area_entered(area):#look for pirate entering area!!
-	pass # Replace with function body.
+	if area.is_in_group("Enemy"):
+		if area.get_parent().dead:
+			pass
+		else:
+			pass
+			#tell pirate to go back with package
