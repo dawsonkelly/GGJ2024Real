@@ -60,7 +60,7 @@ func _on_enemy_spawn_timer_timeout():#spawn enemy
 			add_child(enemy)
 			big -= 1
 			enemies += 1
-		else:
+		elif enemies <= 0:
 			wave_end()
 	print_debug(big)
 

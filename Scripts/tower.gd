@@ -78,6 +78,7 @@ func _on_shoot_radius_area_entered(area):
 					area.get_parent().return_to_ship()
 					sprite1.hide()
 					sprite2.show()
+					get_node("/root/Game/Path2D").enemies -= 1
 					isAttacking = true;
 					$TowerShootTimer.start()
 

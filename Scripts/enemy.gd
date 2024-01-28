@@ -52,6 +52,7 @@ func hit(damage):
 		sprite.set_texture(runTex)#crashes rn
 		print("IVE BEEN HIT IN THE BUTT OWWWWWW")
 		get_node("/root/Game/").add_money(1)
+		get_node("/root/Game/Path2D").enemies -= 1
 		#queue_free()
 
 func take_package():
