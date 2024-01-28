@@ -1,0 +1,45 @@
+[gd_scene load_steps=5 format=3 uid="uid://ngn3edmadrjd"]
+
+[ext_resource type="Texture2D" uid="uid://c7sicc5b1eiu3" path="res://Sprites/YARGGAMEOVER.jpg" id="1_e872e"]
+[ext_resource type="Script" path="res://Scripts/game_over.gd" id="1_gik4u"]
+[ext_resource type="Texture2D" uid="uid://to7uspsprks6" path="res://Sprites/PirateSick.png" id="2_anbh7"]
+[ext_resource type="Texture2D" uid="uid://753bdewix6f8" path="res://Sprites/treasurechest.png" id="3_lek5j"]
+
+[node name="GameOver" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_gik4u")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 2299.0
+offset_bottom = 1281.0
+texture = ExtResource("1_e872e")
+expand_mode = 1
+
+[node name="Quit" type="Button" parent="."]
+layout_mode = 0
+offset_left = 1623.0
+offset_top = 189.0
+offset_right = 1919.0
+offset_bottom = 348.0
+text = "Quit"
+icon = ExtResource("2_anbh7")
+expand_icon = true
+
+[node name="Main Menu" type="Button" parent="."]
+layout_mode = 0
+offset_left = 1962.0
+offset_top = 192.0
+offset_right = 2254.0
+offset_bottom = 348.0
+text = "Main Menu"
+icon = ExtResource("3_lek5j")
+expand_icon = true
+
+[connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="Main Menu" to="." method="_on_main_menu_pressed"]
