@@ -8,6 +8,7 @@ var timer
 var wave = 0
 @export var waves : Array[PackedScene]
 @export var waveButton : Sprite2D
+var waveLimit
 
 var small
 var big
@@ -17,7 +18,12 @@ var pir
 func _ready():
 	#timer = $EnemySpawnTimer as Timer
 	#timer.start()
-	pass
+	if (get_node("/root/GlobalVariables").difficulty == 1):
+		waveLimit = 5
+	elif (get_node("/root/GlobalVariables").difficulty == 2):
+		waveLimit = 10
+	elif (get_node("/root/GlobalVariables").difficulty == 3):
+		waveLimit = 20
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -78,3 +84,4 @@ func start_wave():
 func wave_end():
 	timer.stop()
 	waveButton.show()
+	#if wave = wave limit go to win

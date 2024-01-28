@@ -19,12 +19,12 @@
 [ext_resource type="PackedScene" uid="uid://cua3hlmjh0vtc" path="res://Pirates/smallPirate.tscn" id="9_waeb8"]
 [ext_resource type="PackedScene" uid="uid://csf33avg2qvlc" path="res://Waves/Wave (6).tscn" id="10_8fa6b"]
 [ext_resource type="Texture2D" uid="uid://dscvlls38cw1" path="res://Sprites/Pirate ship.png" id="11_6s6d1"]
-[ext_resource type="PackedScene" path="res://Waves/Wave (7).tscn" id="11_783lx"]
+[ext_resource type="PackedScene" uid="uid://bofpdih51u3sp" path="res://Waves/Wave (7).tscn" id="11_783lx"]
 [ext_resource type="Texture2D" uid="uid://be0j6cefkljo8" path="res://Sprites/box.png" id="11_js7i1"]
 [ext_resource type="PackedScene" uid="uid://d2530xk7hgwxc" path="res://Pirates/BigPirate.tscn" id="11_on4uc"]
-[ext_resource type="PackedScene" path="res://Waves/Wave (8).tscn" id="12_5enbc"]
-[ext_resource type="PackedScene" path="res://Waves/Wave (9).tscn" id="13_20q0f"]
-[ext_resource type="PackedScene" path="res://Waves/Wave (10).tscn" id="14_wl2vf"]
+[ext_resource type="PackedScene" uid="uid://bofpdih51u3sp" path="res://Waves/Wave (8).tscn" id="12_5enbc"]
+[ext_resource type="PackedScene" uid="uid://bofpdih51u3sp" path="res://Waves/Wave (9).tscn" id="13_20q0f"]
+[ext_resource type="PackedScene" uid="uid://bofpdih51u3sp" path="res://Waves/Wave (10).tscn" id="14_wl2vf"]
 
 [sub_resource type="Curve2D" id="Curve2D_l5sy7"]
 _data = {
