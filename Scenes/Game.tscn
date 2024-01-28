@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://cocvks5qqd80p"]
+[gd_scene load_steps=25 format=3 uid="uid://cocvks5qqd80p"]
 
 [ext_resource type="Script" path="res://Scripts/MainGame.gd" id="1_lwarc"]
 [ext_resource type="PackedScene" uid="uid://bk8o00im2jvi5" path="res://Scenes/Tilemaps/tile_map_one.tscn" id="1_rjw5u"]
@@ -6,14 +6,11 @@
 [ext_resource type="PackedScene" uid="uid://c6apdp7ujregg" path="res://Pirates/pirate.tscn" id="3_2k6mc"]
 [ext_resource type="PackedScene" uid="uid://ce5jirfeti4lh" path="res://Waves/Wave (1).tscn" id="5_ka6wi"]
 [ext_resource type="Texture2D" uid="uid://27d274dymlj5" path="res://Sprites/inventory.png" id="5_lh501"]
-[ext_resource type="Texture2D" uid="uid://b7k45e2i6aqet" path="res://Sprites/icon.svg" id="6_f4f05"]
-[ext_resource type="PackedScene" uid="uid://bmklgqeiiqhsq" path="res://Waves/Wave (2).tscn" id="6_q13pr"]
 [ext_resource type="Texture2D" uid="uid://c30yhs3n7lpbi" path="res://Sprites/inventoryClosed.png" id="7_6byqp"]
 [ext_resource type="PackedScene" uid="uid://djakgamecvgsl" path="res://Waves/Wave (3).tscn" id="7_ckglo"]
 [ext_resource type="Texture2D" uid="uid://dcjcxfhc8ore5" path="res://Sprites/Package Bay icon.png" id="8_62emb"]
 [ext_resource type="PackedScene" uid="uid://4gely7q7aeh1" path="res://Waves/Wave (4).tscn" id="8_f4vgn"]
 [ext_resource type="PackedScene" uid="uid://bn6d6k44itruv" path="res://Scenes/porch.tscn" id="8_mi0vb"]
-[ext_resource type="Texture2D" uid="uid://22ysptgmtyce" path="res://Sprites/Package Bay.png" id="9_amosc"]
 [ext_resource type="Texture2D" uid="uid://dyrhl5483ak3e" path="res://Sprites/nextwave.png" id="9_byq4d"]
 [ext_resource type="PackedScene" uid="uid://b6uiprcrgfkow" path="res://Waves/Wave (5).tscn" id="9_kochc"]
 [ext_resource type="PackedScene" uid="uid://cua3hlmjh0vtc" path="res://Pirates/smallPirate.tscn" id="9_waeb8"]
@@ -21,7 +18,11 @@
 [ext_resource type="Texture2D" uid="uid://dscvlls38cw1" path="res://Sprites/Pirate ship.png" id="11_6s6d1"]
 [ext_resource type="Texture2D" uid="uid://be0j6cefkljo8" path="res://Sprites/box.png" id="11_js7i1"]
 [ext_resource type="PackedScene" uid="uid://d2530xk7hgwxc" path="res://Pirates/BigPirate.tscn" id="11_on4uc"]
-[ext_resource type="PackedScene" uid="uid://bofpdih51u3sp" path="res://Waves/Wave (20).tscn" id="26_pveku"]
+[ext_resource type="Texture2D" uid="uid://c4iacoxiabajc" path="res://Sprites/inv1.png" id="14_mel4h"]
+[ext_resource type="Texture2D" uid="uid://cp6ab1s5q7xgd" path="res://Sprites/inv3.png" id="15_4u8dw"]
+[ext_resource type="Texture2D" uid="uid://bwugv5lhxbixt" path="res://Sprites/inv2.png" id="16_w5i38"]
+[ext_resource type="PackedScene" uid="uid://bmklgqeiiqhsq" path="res://Waves/Wave (2).tscn" id="26_pveku"]
+[ext_resource type="Texture2D" uid="uid://bu0qbh101qdvl" path="res://Sprites/PackageBayWebsite1.png" id="31_4t67p"]
 
 [sub_resource type="Curve2D" id="Curve2D_l5sy7"]
 _data = {
@@ -29,8 +30,10 @@ _data = {
 }
 point_count = 14
 
-[node name="Game" type="Node2D"]
+[node name="Game2" type="Node2D" node_paths=PackedStringArray("shopWindow", "shopButton")]
 script = ExtResource("1_lwarc")
+shopWindow = NodePath("GUI/Shop/Website")
+shopButton = NodePath("GUI/Shop/ShopOpen")
 
 [node name="TileMap" parent="." instance=ExtResource("1_rjw5u")]
 
@@ -42,7 +45,7 @@ scale = Vector2(0.999003, 1)
 curve = SubResource("Curve2D_l5sy7")
 script = ExtResource("2_4fg0s")
 pirates = Array[PackedScene]([ExtResource("9_waeb8"), ExtResource("3_2k6mc"), ExtResource("11_on4uc")])
-waves = Array[PackedScene]([ExtResource("5_ka6wi"), ExtResource("5_ka6wi"), ExtResource("6_q13pr"), ExtResource("7_ckglo"), ExtResource("8_f4vgn"), ExtResource("9_kochc"), ExtResource("10_8fa6b"), ExtResource("26_pveku"), ExtResource("26_pveku"), ExtResource("26_pveku"), ExtResource("26_pveku"), ExtResource("26_pveku"), ExtResource("26_pveku"), ExtResource("26_pveku"), ExtResource("26_pveku"), ExtResource("26_pveku"), ExtResource("26_pveku"), ExtResource("26_pveku"), ExtResource("26_pveku"), ExtResource("26_pveku"), ExtResource("26_pveku")])
+waves = Array[PackedScene]([ExtResource("5_ka6wi"), ExtResource("5_ka6wi"), ExtResource("26_pveku"), ExtResource("7_ckglo"), ExtResource("8_f4vgn"), ExtResource("9_kochc"), ExtResource("10_8fa6b"), ExtResource("26_pveku"), ExtResource("26_pveku"), ExtResource("26_pveku"), ExtResource("26_pveku"), ExtResource("26_pveku"), ExtResource("26_pveku"), ExtResource("26_pveku"), ExtResource("26_pveku"), ExtResource("26_pveku"), ExtResource("26_pveku"), ExtResource("26_pveku"), ExtResource("26_pveku"), ExtResource("26_pveku"), ExtResource("26_pveku")])
 waveButton = NodePath("../GUI/Nextwave")
 
 [node name="EnemySpawnTimer" type="Timer" parent="Path2D"]
@@ -63,28 +66,36 @@ offset_left = -137.188
 offset_top = -460.441
 offset_right = -9.18752
 offset_bottom = -332.441
-texture = ExtResource("6_f4f05")
+texture = ExtResource("14_mel4h")
+expand_mode = 1
+
+[node name="TextureRect3" type="TextureRect" parent="GUI/Inventory/Open"]
+offset_left = -130.525
+offset_top = -308.774
+offset_right = -2.52441
+offset_bottom = -180.774
+texture = ExtResource("15_4u8dw")
+expand_mode = 1
 
 [node name="TextureRect2" type="TextureRect" parent="GUI/Inventory/Open"]
 offset_left = 6.97914
 offset_top = -460.441
 offset_right = 134.979
 offset_bottom = -332.441
-texture = ExtResource("6_f4f05")
+texture = ExtResource("16_w5i38")
+expand_mode = 1
 
 [node name="Pez tower" type="TextureButton" parent="GUI/Inventory/Open"]
 offset_left = -136.358
-offset_top = -461.274
-offset_right = -8.35823
-offset_bottom = -333.274
-texture_normal = ExtResource("6_f4f05")
+offset_top = -458.774
+offset_right = -8.35843
+offset_bottom = -330.774
 
 [node name="Pool" type="TextureButton" parent="GUI/Inventory/Open"]
-offset_left = -136.358
-offset_top = -322.107
-offset_right = -8.3582
-offset_bottom = -194.107
-texture_normal = ExtResource("6_f4f05")
+offset_left = -128.858
+offset_top = -309.607
+offset_right = -0.858215
+offset_bottom = -181.607
 
 [node name="Battery" type="TextureButton" parent="GUI/Inventory/Open"]
 offset_left = 6.97513
@@ -120,7 +131,7 @@ text = "Packages: 5"
 
 [node name="Shop" type="Node2D" parent="GUI"]
 
-[node name="TextureButton" type="TextureButton" parent="GUI/Shop"]
+[node name="ShopOpen" type="TextureButton" parent="GUI/Shop"]
 offset_left = 1732.0
 offset_top = 50.0
 offset_right = 1886.0
@@ -128,11 +139,19 @@ offset_bottom = 182.0
 texture_normal = ExtResource("8_62emb")
 stretch_mode = 0
 
-[node name="Shop1" type="Sprite2D" parent="GUI/Shop"]
+[node name="Website" type="Node2D" parent="GUI/Shop"]
 visible = false
+
+[node name="Shop1" type="Sprite2D" parent="GUI/Shop/Website"]
 position = Vector2(1315, 637)
 scale = Vector2(1.2, 1.2)
-texture = ExtResource("9_amosc")
+texture = ExtResource("31_4t67p")
+
+[node name="ShopClose" type="TextureButton" parent="GUI/Shop/Website"]
+offset_left = 1883.0
+offset_top = 44.0
+offset_right = 1907.0
+offset_bottom = 69.0
 
 [node name="Popups" type="Node2D" parent="GUI"]
 
@@ -174,8 +193,8 @@ position = Vector2(214.546, 90.9091)
 texture = ExtResource("11_js7i1")
 
 [node name="PirateShip" type="Sprite2D" parent="."]
-position = Vector2(1169.25, 1117.75)
-scale = Vector2(2.36111, 1.70294)
+position = Vector2(1168, 1060)
+scale = Vector2(2, 2)
 texture = ExtResource("11_6s6d1")
 
 [connection signal="timeout" from="Path2D/EnemySpawnTimer" to="Path2D" method="_on_enemy_spawn_timer_timeout"]
@@ -183,5 +202,6 @@ texture = ExtResource("11_6s6d1")
 [connection signal="pressed" from="GUI/Inventory/Open/Pool" to="." method="_on_tower3_button_pressed"]
 [connection signal="pressed" from="GUI/Inventory/Open/Battery" to="." method="_on_tower2_button_pressed"]
 [connection signal="pressed" from="GUI/Inventory/TextureButton" to="." method="_on_inventory_button_pressed"]
-[connection signal="pressed" from="GUI/Shop/TextureButton" to="." method="_on_open_shop"]
+[connection signal="pressed" from="GUI/Shop/ShopOpen" to="." method="_on_open_shop"]
+[connection signal="pressed" from="GUI/Shop/Website/ShopClose" to="." method="_on_close_shop"]
 [connection signal="pressed" from="GUI/Nextwave/Next Wave button" to="Path2D" method="start_wave"]

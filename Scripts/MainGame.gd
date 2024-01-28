@@ -24,6 +24,11 @@ var inventoryOn = false;
 var invOpen
 var invClosed
 
+@export var shopWindow : Node2D
+@export var shopButton : TextureButton
+@export var upgradeButton : TextureButton
+@export var upgradeTexture : Texture2D
+
 func _ready():
 	invOpen = get_node("GUI/Inventory/Open")
 	invClosed = get_node("GUI/Inventory/Closed")
@@ -100,7 +105,14 @@ func game_over():
 	get_tree().change_scene_to_file("res://Scenes/game_over.tscn")
 
 func _on_open_shop():
-	pass # Replace with function body.
+	cancel()
+	shopButton.hide()
+	shopWindow.show()
+	
+func _on_close_shop():
+		cancel()
+		shopButton.show()
+		shopWindow.hide()
 
 func add_money(coin):
 	money += coin

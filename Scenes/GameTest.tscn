@@ -1,9 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://dsoecycwpdxvm"]
+[gd_scene load_steps=6 format=3 uid="uid://dsoecycwpdxvm"]
 
 [ext_resource type="Script" path="res://Scripts/MainGame.gd" id="1_2bbik"]
 [ext_resource type="PackedScene" uid="uid://bk8o00im2jvi5" path="res://Scenes/Tilemaps/tile_map_one.tscn" id="2_h74s6"]
 [ext_resource type="Script" path="res://Scenes/Tilemaps/enemy_spawn_path.gd" id="3_3vflm"]
-[ext_resource type="PackedScene" uid="uid://c6apdp7ujregg" path="res://Pirates/pirate.tscn" id="4_htopf"]
 [ext_resource type="PackedScene" uid="uid://g55e88eesyxv" path="res://Towers/tower.tscn" id="5_20n74"]
 
 [sub_resource type="Curve2D" id="Curve2D_l5sy7"]
@@ -12,7 +11,7 @@ _data = {
 }
 point_count = 14
 
-[node name="Game" type="Node2D"]
+[node name="Game2" type="Node2D"]
 script = ExtResource("1_2bbik")
 
 [node name="TileMap" parent="." instance=ExtResource("2_h74s6")]
@@ -22,7 +21,6 @@ script = ExtResource("1_2bbik")
 [node name="Path2D" type="Path2D" parent="."]
 curve = SubResource("Curve2D_l5sy7")
 script = ExtResource("3_3vflm")
-enemyScene = ExtResource("4_htopf")
 
 [node name="EnemySpawnTimer" type="Timer" parent="Path2D"]
 wait_time = 3.0
