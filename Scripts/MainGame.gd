@@ -1,6 +1,6 @@
 extends Node2D
 
-var money = 20
+var money = 100
 var health = 5#packages
 var subscription = false
 
@@ -25,6 +25,7 @@ var invOpen
 var invClosed
 
 @export var shopWindow : Node2D
+@export var shopSprite : Sprite2D
 @export var shopButton : TextureButton
 @export var premiumTexture : Texture2D
 @export var premiumButton : TextureButton
@@ -125,6 +126,7 @@ func _on_premium():
 		subscription = true
 		health += 5
 		premiumButton.hide()
+		shopSprite.texture = premiumTexture
 
 
 

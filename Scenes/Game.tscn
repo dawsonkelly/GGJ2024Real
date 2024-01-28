@@ -1,8 +1,9 @@
-[gd_scene load_steps=25 format=3 uid="uid://cocvks5qqd80p"]
+[gd_scene load_steps=26 format=3 uid="uid://cocvks5qqd80p"]
 
 [ext_resource type="Script" path="res://Scripts/MainGame.gd" id="1_lwarc"]
 [ext_resource type="PackedScene" uid="uid://bk8o00im2jvi5" path="res://Scenes/Tilemaps/tile_map_one.tscn" id="1_rjw5u"]
 [ext_resource type="Script" path="res://Scenes/Tilemaps/enemy_spawn_path.gd" id="2_4fg0s"]
+[ext_resource type="Texture2D" uid="uid://db5d45s6s480u" path="res://Sprites/PackageBayWebsite2.png" id="2_84mvn"]
 [ext_resource type="PackedScene" uid="uid://c6apdp7ujregg" path="res://Pirates/pirate.tscn" id="3_2k6mc"]
 [ext_resource type="PackedScene" uid="uid://ce5jirfeti4lh" path="res://Waves/Wave (1).tscn" id="5_ka6wi"]
 [ext_resource type="Texture2D" uid="uid://27d274dymlj5" path="res://Sprites/inventory.png" id="5_lh501"]
@@ -30,10 +31,12 @@ _data = {
 }
 point_count = 14
 
-[node name="Game2" type="Node2D" node_paths=PackedStringArray("shopWindow", "shopButton", "premiumButton")]
+[node name="Game2" type="Node2D" node_paths=PackedStringArray("shopWindow", "shopSprite", "shopButton", "premiumButton")]
 script = ExtResource("1_lwarc")
 shopWindow = NodePath("GUI/Shop/Website")
+shopSprite = NodePath("GUI/Shop/Website/Shop1")
 shopButton = NodePath("GUI/Shop/ShopOpen")
+premiumTexture = ExtResource("2_84mvn")
 premiumButton = NodePath("GUI/Shop/Website/Premium")
 
 [node name="TileMap" parent="." instance=ExtResource("1_rjw5u")]
@@ -141,6 +144,7 @@ texture_normal = ExtResource("8_62emb")
 stretch_mode = 0
 
 [node name="Website" type="Node2D" parent="GUI/Shop"]
+visible = false
 
 [node name="Shop1" type="Sprite2D" parent="GUI/Shop/Website"]
 position = Vector2(1315, 637)
