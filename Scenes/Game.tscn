@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://cocvks5qqd80p"]
+[gd_scene load_steps=27 format=3 uid="uid://cocvks5qqd80p"]
 
 [ext_resource type="Script" path="res://Scripts/MainGame.gd" id="1_lwarc"]
 [ext_resource type="PackedScene" uid="uid://bk8o00im2jvi5" path="res://Scenes/Tilemaps/tile_map_one.tscn" id="1_rjw5u"]
@@ -22,6 +22,7 @@
 [ext_resource type="Texture2D" uid="uid://c4iacoxiabajc" path="res://Sprites/inv1.png" id="14_mel4h"]
 [ext_resource type="Texture2D" uid="uid://cp6ab1s5q7xgd" path="res://Sprites/inv3.png" id="15_4u8dw"]
 [ext_resource type="Texture2D" uid="uid://bwugv5lhxbixt" path="res://Sprites/inv2.png" id="16_w5i38"]
+[ext_resource type="PackedScene" uid="uid://cwblbp4bj2ph" path="res://Scenes/AdHandler.tscn" id="25_pfcyd"]
 [ext_resource type="PackedScene" uid="uid://bmklgqeiiqhsq" path="res://Waves/Wave (2).tscn" id="26_pveku"]
 [ext_resource type="Texture2D" uid="uid://bu0qbh101qdvl" path="res://Sprites/PackageBayWebsite1.png" id="31_4t67p"]
 
@@ -206,6 +207,8 @@ texture = ExtResource("11_js7i1")
 position = Vector2(1168, 1060)
 scale = Vector2(2, 2)
 texture = ExtResource("11_6s6d1")
+
+[node name="AdHandler" parent="." instance=ExtResource("25_pfcyd")]
 
 [connection signal="timeout" from="Path2D/EnemySpawnTimer" to="Path2D" method="_on_enemy_spawn_timer_timeout"]
 [connection signal="pressed" from="GUI/Inventory/Open/Pez tower" to="." method="_on_tower1_button_pressed"]
