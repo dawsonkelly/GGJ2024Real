@@ -11,11 +11,12 @@ var goinIn = true
 
 var hasPackage = false
 
-@export var speed = 100#test at 1000
+@export var speed = 10#test at 1000
 
 @export var regTex : Texture
 @export var runTex : Texture
 @export var package : Sprite2D
+
 
 @export var packageScene : PackedScene
 

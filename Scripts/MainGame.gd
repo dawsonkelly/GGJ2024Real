@@ -30,7 +30,7 @@ var invClosed
 @export var premiumTexture : Texture2D
 @export var premiumButton : TextureButton
 @export var upgradeButton : TextureButton
-
+@export var ads : Node2D
 
 func _ready():
 	invOpen = get_node("GUI/Inventory/Open")
@@ -127,6 +127,7 @@ func _on_premium():
 		health += 5
 		premiumButton.hide()
 		shopSprite.texture = premiumTexture
+		ads.show()
 
 
 

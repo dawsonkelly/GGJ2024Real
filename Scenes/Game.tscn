@@ -32,13 +32,14 @@ _data = {
 }
 point_count = 14
 
-[node name="Game" type="Node2D" node_paths=PackedStringArray("shopWindow", "shopSprite", "shopButton", "premiumButton")]
+[node name="Game" type="Node2D" node_paths=PackedStringArray("shopWindow", "shopSprite", "shopButton", "premiumButton", "ads")]
 script = ExtResource("1_lwarc")
 shopWindow = NodePath("GUI/Shop/Website")
 shopSprite = NodePath("GUI/Shop/Website/Shop1")
 shopButton = NodePath("GUI/Shop/ShopOpen")
 premiumTexture = ExtResource("2_84mvn")
 premiumButton = NodePath("GUI/Shop/Website/Premium")
+ads = NodePath("AdHandler")
 
 [node name="TileMap" parent="." instance=ExtResource("1_rjw5u")]
 
@@ -209,6 +210,7 @@ scale = Vector2(2, 2)
 texture = ExtResource("11_6s6d1")
 
 [node name="AdHandler" parent="." instance=ExtResource("25_pfcyd")]
+visible = false
 
 [connection signal="timeout" from="Path2D/EnemySpawnTimer" to="Path2D" method="_on_enemy_spawn_timer_timeout"]
 [connection signal="pressed" from="GUI/Inventory/Open/Pez tower" to="." method="_on_tower1_button_pressed"]
