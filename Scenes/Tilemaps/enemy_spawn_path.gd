@@ -84,4 +84,5 @@ func start_wave():
 func wave_end():
 	timer.stop()
 	waveButton.show()
-	#if wave = wave limit go to win
+	if wave == waveLimit:
+		get_tree().change_scene_to_file("res://Scenes/win_screen.tscn")

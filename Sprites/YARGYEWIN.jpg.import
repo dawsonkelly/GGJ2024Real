@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://6aad8m8btkpc"
-path="res://.godot/imported/YARGGAMEOVER.jpg-d713f60422f47d23f8d0bf133209b6e4.ctex"
+uid="uid://c7sicc5b1eiu3"
+path="res://.godot/imported/YARGYEWIN.jpg-6b4908a07bdc3b3e023eca7daa603948.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/YARGGAMEOVER.jpg"
-dest_files=["res://.godot/imported/YARGGAMEOVER.jpg-d713f60422f47d23f8d0bf133209b6e4.ctex"]
+source_file="res://Sprites/YARGYEWIN.jpg"
+dest_files=["res://.godot/imported/YARGYEWIN.jpg-6b4908a07bdc3b3e023eca7daa603948.ctex"]
 
 [params]
 

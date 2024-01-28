@@ -1,0 +1,57 @@
+[gd_scene load_steps=5 format=3 uid="uid://drvx07ltxlpjg"]
+
+[ext_resource type="Script" path="res://Scripts/win_screen.gd" id="1_7kobg"]
+[ext_resource type="Texture2D" uid="uid://c7sicc5b1eiu3" path="res://Sprites/YARGYEWIN.jpg" id="2_nrxmu"]
+[ext_resource type="Texture2D" uid="uid://dscvlls38cw1" path="res://Sprites/Pirate ship.png" id="3_o0csp"]
+[ext_resource type="Texture2D" uid="uid://to7uspsprks6" path="res://Sprites/PirateSick.png" id="4_36378"]
+
+[node name="WinScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_7kobg")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 2298.0
+offset_bottom = 1281.0
+texture = ExtResource("2_nrxmu")
+expand_mode = 1
+
+[node name="MainMenu" type="Button" parent="."]
+layout_mode = 0
+offset_left = 1781.0
+offset_top = 989.0
+offset_right = 2224.0
+offset_bottom = 1209.0
+text = "Avast Ye to Ye 
+olde Main Menu"
+icon = ExtResource("3_o0csp")
+expand_icon = true
+
+[node name="Quit" type="Button" parent="."]
+layout_mode = 0
+offset_left = 1247.0
+offset_top = 1008.0
+offset_right = 1613.0
+offset_bottom = 1197.0
+text = "Quit
+(A TRUE GENTLEMAN 
+OF FORTUNE NE'ER WALKS
+THE PLANK)"
+icon = ExtResource("4_36378")
+expand_icon = true
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 1671.0
+offset_top = 620.0
+offset_right = 1865.0
+offset_bottom = 643.0
+text = "YARGYEWINNNNNNNNN"
+
+[connection signal="pressed" from="MainMenu" to="." method="_on_main_menu_pressed"]
+[connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]
