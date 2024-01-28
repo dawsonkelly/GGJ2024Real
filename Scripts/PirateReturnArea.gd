@@ -1,4 +1,3 @@
-
 extends Area2D
 
 
@@ -13,10 +12,8 @@ func _process(delta):
 
 
 
-func _on_area_entered(area):#look for pirate entering area!!
+
+func _on_area_entered(area):#if pirate entered then return them
 	if area.is_in_group("Enemy"):
-		if area.get_parent().dead:
-			pass
-		else:
-			pass
-			area.get_parent().take_package()
+		print("PIRATE RETURNED ARGGEGg")
+		area.get_parent().return_to_ship()

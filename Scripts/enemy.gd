@@ -11,10 +11,12 @@ var health = 1
 
 var hasPackage = false
 
-@export var speed = 100
+@export var speed = 1000#test at 1000
 
 @export var regTex : Texture
 @export var runTex : Texture
+
+@export var packageScene : PackedScene
 
 var sprite
 
@@ -41,8 +43,15 @@ func hit():
 	hasPackage = false;
 	goinIn = false;
 	dead = true
-	sprite.set_texture(runTex)#crashes rn
+	#sprite.set_texture(runTex)#crashes rn
 	print("IVE BEEN HIT IN THE BUTT OWWWWWW")
 	get_node("/root/Game/").add_money(1)
 	#queue_free()
+
+func take_package():
+	var package = packageScene.instantiate()
+	add_child(package)
+
+func return_to_ship():
+	queue_free()
 
