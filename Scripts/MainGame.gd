@@ -16,6 +16,7 @@ var cost
 
 var tower1 = preload("res://Towers/tower.tscn")
 var tower2 = preload("res://Towers/battery.tscn")
+var tower3 = preload("res://Towers/pool.tscn")
 
 var inventoryOn = false;
 var invOpen
@@ -67,6 +68,17 @@ func _on_tower2_button_pressed():
 			building = true
 			add_child(instanceTower)
 
+func _on_tower3_button_pressed():
+	if building == false:
+		if  money >= 20:
+			invOpen.hide()
+			invClosed.show()
+			inventoryOn = false
+			instanceTower = tower3.instantiate()
+			cost = 20
+			building = true
+			add_child(instanceTower)
+
 func tower_built():
 	building = false
 	money -= cost
@@ -82,6 +94,9 @@ func _on_open_shop():
 
 func add_money(coin):
 	money += coin
+
+
+
 
 
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://cocvks5qqd80p"]
+[gd_scene load_steps=14 format=3 uid="uid://cocvks5qqd80p"]
 
 [ext_resource type="Script" path="res://Scripts/MainGame.gd" id="1_lwarc"]
 [ext_resource type="PackedScene" uid="uid://bk8o00im2jvi5" path="res://Scenes/Tilemaps/tile_map_one.tscn" id="1_rjw5u"]
@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://bn6d6k44itruv" path="res://Scenes/porch.tscn" id="8_mi0vb"]
 [ext_resource type="Texture2D" uid="uid://22ysptgmtyce" path="res://Sprites/Package Bay.png" id="9_amosc"]
 [ext_resource type="Texture2D" uid="uid://dscvlls38cw1" path="res://Sprites/Pirate ship.png" id="11_6s6d1"]
+[ext_resource type="Texture2D" uid="uid://be0j6cefkljo8" path="res://Sprites/box.png" id="11_js7i1"]
 
 [sub_resource type="Curve2D" id="Curve2D_l5sy7"]
 _data = {
@@ -40,6 +41,7 @@ wait_time = 3.0
 [node name="Inventory" type="Node2D" parent="GUI"]
 
 [node name="Open" type="Sprite2D" parent="GUI/Inventory"]
+visible = false
 position = Vector2(2103.63, 639.529)
 scale = Vector2(1.2, 1.2)
 texture = ExtResource("5_lh501")
@@ -65,12 +67,18 @@ offset_right = -8.35823
 offset_bottom = -333.274
 texture_normal = ExtResource("6_f4f05")
 
+[node name="Pool" type="TextureButton" parent="GUI/Inventory/Open"]
+offset_left = -136.358
+offset_top = -322.107
+offset_right = -8.3582
+offset_bottom = -194.107
+texture_normal = ExtResource("6_f4f05")
+
 [node name="Battery" type="TextureButton" parent="GUI/Inventory/Open"]
 offset_left = 6.97513
 offset_top = -460.441
 offset_right = 134.975
 offset_bottom = -332.441
-texture_normal = ExtResource("6_f4f05")
 
 [node name="Closed" type="Sprite2D" parent="GUI/Inventory"]
 position = Vector2(2104, 639)
@@ -123,24 +131,24 @@ position = Vector2(1183, 70)
 scale = Vector2(0.275, 0.275)
 
 [node name="Package" type="Sprite2D" parent="Porch"]
-position = Vector2(-109.091, 123.636)
-texture = ExtResource("6_f4f05")
+position = Vector2(-83.6365, -3.63636)
+texture = ExtResource("11_js7i1")
 
 [node name="Package2" type="Sprite2D" parent="Porch"]
-position = Vector2(72.7273, 167.273)
-texture = ExtResource("6_f4f05")
+position = Vector2(94.5455, -36.3636)
+texture = ExtResource("11_js7i1")
 
 [node name="Package3" type="Sprite2D" parent="Porch"]
-position = Vector2(54.5455, 14.5455)
-texture = ExtResource("6_f4f05")
+position = Vector2(-170.909, 83.6364)
+texture = ExtResource("11_js7i1")
 
 [node name="Package4" type="Sprite2D" parent="Porch"]
-position = Vector2(-214.545, -47.2727)
-texture = ExtResource("6_f4f05")
+position = Vector2(18.1818, 94.5455)
+texture = ExtResource("11_js7i1")
 
 [node name="Package5" type="Sprite2D" parent="Porch"]
-position = Vector2(272.727, 43.6364)
-texture = ExtResource("6_f4f05")
+position = Vector2(214.546, 90.9091)
+texture = ExtResource("11_js7i1")
 
 [node name="Ship" type="Sprite2D" parent="."]
 z_index = 10
@@ -150,6 +158,7 @@ texture = ExtResource("11_6s6d1")
 
 [connection signal="timeout" from="Path2D/EnemySpawnTimer" to="Path2D" method="_on_enemy_spawn_timer_timeout"]
 [connection signal="pressed" from="GUI/Inventory/Open/Pez tower" to="." method="_on_tower1_button_pressed"]
+[connection signal="pressed" from="GUI/Inventory/Open/Pool" to="." method="_on_tower3_button_pressed"]
 [connection signal="pressed" from="GUI/Inventory/Open/Battery" to="." method="_on_tower2_button_pressed"]
 [connection signal="pressed" from="GUI/Inventory/TextureButton" to="." method="_on_inventory_button_pressed"]
 [connection signal="pressed" from="GUI/Shop/TextureButton" to="." method="_on_open_shop"]

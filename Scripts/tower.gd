@@ -4,13 +4,21 @@ extends StaticBody2D
 
 var enemies = []
 var current_enemy
+var isAttacking = false
 
 var building = true
 @export var towerType = 0
 
+@export var sprite1 : Sprite2D
+@export var sprite2 : Sprite2D
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	$TowerShootTimer.start()
+	if towerType != 2:
+		$TowerShootTimer.start()
+	else:
+		sprite1.show()
+		sprite2.hide()
 
 
 func _physics_process(delta):
@@ -30,17 +38,23 @@ func _physics_process(delta):
 
 func _on_tower_shoot_timer_timeout():#bang!
 	if building == false:
-		if enemies != []:
-			for e in enemies:
-				if e.get_parent().dead:
-					enemies.erase(current_enemy)
-		if towerType == 0:
-				current_enemy = enemies[0]#selects first enemy to enter radius
-				shoot(current_enemy)
-		if towerType == 1:
+		if towerType == 2:
+			sprite1.show()
+			sprite2.hide()
+			isAttacking = false
+			$TowerShootTimer.stop()
+		else:
 			if enemies != []:
-				for i in enemies:
-					shoot(i);
+				for e in enemies:
+					if e.get_parent().dead:
+						enemies.erase(current_enemy)
+			if towerType == 0:
+					current_enemy = enemies[0]#selects first enemy to enter radius
+					shoot(current_enemy)
+			if towerType == 1:
+				if enemies != []:
+					for i in enemies:
+						shoot(i);
 
 func shoot(target):
 	var bullet = bulletScene.instantiate()
@@ -53,7 +67,15 @@ func _on_shoot_radius_area_entered(area):
 	if area.is_in_group("Enemy"):
 		if building == false:
 			#print("enemy!")
-			enemies.append(area)
+			if(towerType != 2):
+				enemies.append(area)
+			else:
+				if !isAttacking:
+					area.queue_free()
+					sprite1.hide()
+					sprite2.show()
+					isAttacking = true;
+					$TowerShootTimer.start()
 
 
 func _on_shoot_radius_area_exited(area):
